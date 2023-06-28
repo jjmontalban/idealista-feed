@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: idealista-properties-feed.php
+msgid "Nonce verification failed."
+msgstr "Verificación Nonce fallida"
+
+msgid "Click the button below to generate and send the properties feed to Idealista."
+msgstr "Haga clic en el botón de abajo para generar y enviar el feed de propiedades a Idealista."
+
+msgid "JSON file generated/modified successfully and stored at path: %s"
+msgstr "Archivo JSON generado/modificado con éxito y almacenado en la ruta: %s"
+
+msgid "Idealista Code:"
+msgstr "Código Idealista:"
+
+msgid "Idelista Reference:"
+msgstr "Referencia Idealista:"
+
+msgid "Idealista Customer Data."
+msgstr "Datos de cliente de Idealista."
+
+msgid "Contact Name:"
+msgstr "Nombre de Contacto:"
+
+msgid "Email:"
+msgstr ""
+
+msgid "Main Phone:"
+msgstr "Teléfono Principal:"
+
+msgid "Secondary Phone:"
+msgstr "Teléfono Secundario:"
+
+msgid "Error retrieving properties from WordPress."
+msgstr "Error al recuperar propiedades."
+
+msgid "No properties found."
+msgstr "No se encontraron propiedades."
+
+msgid "Error retrieving property status."
+msgstr "Eror al recuperar estados de la propiedad."
+
+msgid "Error creating JSON file."
+msgstr "Error al crear archivo JSON."
