@@ -1,3 +1,3 @@
 Plugin Wordpress: Idealista Properties Feed
 
-Generates and sends a properties feed to Idealista.
+Generates and sends custom type Wordpress Properties feed to Idealista
