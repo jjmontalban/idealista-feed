@@ -1,0 +1,1405 @@
+{
+    "customerCountry": "Spain",
+    "customerCode": "ilcc7da95e5ef3199fe8c4551c81e82e51afa951740",
+    "customerReference": "Idealista Feed",
+    "customerSendDate": "2023/07/05 12:31:02",
+    "customerContact": {
+        "contactName": "Chipicasa SL",
+        "contactEmail": "info@chipicasa.com",
+        "contactPrimaryPhonePrefix": "34",
+        "contactPrimaryPhoneNumber": "692606772",
+        "contactSecondaryPhonePrefix": "34",
+        "contactSecondaryPhoneNumber": "623296900"
+    },
+    "customerProperties": [
+        {
+            "propertyCode": "6144",
+            "propertyReference": "RH-6144-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 186500
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "C. Madre Teresa de Calcuta",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": 75,
+                "featuresAreaUsable": 0,
+                "featuresBathroomNumber": 2,
+                "featuresBedroomNumber": 3,
+                "featuresBuiltYear": 1998,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Magnífico piso en primera planta, consta de 3 dormitorios con roperos empotrados, 2 baños completos (uno de ellos en suite), cocina independiente y salón-comedor muy cómodo dada sus dimensiones. Se encuentra en pleno centro de la localidad en una zona tranquila, a no más de 5 minutos de la playa de la cruz del mar y a 2 minutos de la calle Isaac peral (sierpes) donde poder encontrar diferentes bares, restaurantes y comercios. La vivienda se entregaría tal y como se aprecia en las fotos excepto objetos personales.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_104715-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_104747-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_104620-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_103454-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_103403-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184438-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184450-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184520-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184534-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_104215-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_104218-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_185121-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_185147-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_185208-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_185638-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_185656-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184646-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Madre teresa 186.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230612_184654-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "6111",
+            "propertyReference": "RH-6111-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 169900
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "Av. de Cádiz",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": 90,
+                "featuresAreaUsable": 80,
+                "featuresBathroomNumber": 2,
+                "featuresBedroomNumber": 3,
+                "featuresBuiltYear": 1971,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Espectacular y bien ubicado piso en planta baja, distribuido en 3 dormitorios de los cuales 2 de ellos tienen ropero empotrado, salón-comedor, cocina bastante amplia con trastero o lavadero, 2 baños (uno de ellos en suite), terraza delantera con dimensiones buenas como para poder estar en ella varias personas a la vez reunidas. La vivienda se encuentra tal y como se aprecia en las fotos, se puede entrar a vivir tal y como está ya que no le hace falta reforma mayor, está situada en una zona muy céntrica y a 5 minutos de la playa andando.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104252-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104309-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104555-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104710-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104755-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104926-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_104950-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105046-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105112-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105134-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105220-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105412-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105500-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105631-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105704-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105818-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105842-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_105853-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110112-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110146-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110200-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110230-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110718-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_110748-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111014-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111039-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111113-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111154-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111302-scaled.jpg"
+                },
+                {
+                    "imageOrder": 30,
+                    "imageLabel": "Av. Cádiz 169.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230619_111308-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "6096",
+            "propertyReference": "RH-6096-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 108000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "C. Padre Lerchundi",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Apartamento",
+                "featuresAreaConstructed": 40,
+                "featuresAreaUsable": 0,
+                "featuresBathroomNumber": 1,
+                "featuresBedroomNumber": 1,
+                "featuresBuiltYear": 2000,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Coqueto apartamento en planta baja que dispone de 1 dormitorio con armario empotrado, salón-comedor, cocina americana, 1 baño completo con plato de ducha, además de un patio interior comunitario. Esta vivienda está en pleno centro de la localidad a no más de 3 minutos de la calle peatonal Isaac Peral y a 5 minutos de la playa cruz del mar a pie. Se encuentra en muy buen estado de conservación tal y como se aprecia en las fotos, es ideal para una familia que busque comodidad, sencillez y cercanía.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110022-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110036-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110116-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110157-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110214-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110236-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110436-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110444-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110618-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110629-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110659-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_110717-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Lerchundi 108.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230623_111204-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "6063",
+            "propertyReference": "RH-6063-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 176000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "C. Camaleón",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": 124,
+                "featuresAreaUsable": 109,
+                "featuresBathroomNumber": 2,
+                "featuresBedroomNumber": 3,
+                "featuresBuiltYear": 2004,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Inmenso piso en planta baja que se distribuye en 3 dormitorios, cocina independiente, 2 baños (uno de ellos en suite) terraza con vistas a los jardines de la urbanización y un patio interior que se accede a través de la cocina. Cuenta con una plaza de aparcamiento privada en superficie dentro del residencial, además de un trastero a la entrada del bloque. Tiene buen estado de conservación, listo para entrar a vivir. Se encuentra en la zona denominada \"La Laguna\", a 3 calles de la playa y el ocio.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.21-7.jpeg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.21-5.jpeg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.21-4.jpeg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.23-2.jpeg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.23.jpeg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.22-7.jpeg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.23-1.jpeg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.22-2.jpeg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.17-3.jpeg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.18-1.jpeg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.18.jpeg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20-3.jpeg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20-4.jpeg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20-5.jpeg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.19-1.jpeg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.19-2.jpeg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.19-3.jpeg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.19-4.jpeg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.18-3.jpeg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.18-5.jpeg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.19.jpeg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20-1.jpeg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20-2.jpeg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.20.jpeg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.22-5.jpeg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.21-2.jpeg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.21-3.jpeg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.22-4.jpeg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.17-1.jpeg"
+                },
+                {
+                    "imageOrder": 30,
+                    "imageLabel": "c/camaleón 176.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-06-24-at-10.09.17-2.jpeg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "6017",
+            "propertyReference": "RH-6017-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 340000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "C. Larga",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Residencial",
+                "featuresAreaConstructed": 156,
+                "featuresAreaUsable": 135,
+                "featuresBathroomNumber": 2,
+                "featuresBedroomNumber": 5,
+                "featuresBuiltYear": 1900,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Estupenda e histórica vivienda independiente en parcela de 150m2 aproximadamente que dispone en su planta baja de 3 dormitorios, salón comedor, cocina, 1 baño, patio interior desahogo y otro patio interior idóneo para encuentros entre amigos y/o familiares. En la planta alta encontraremos 2 dormitorios, 1 baño, trastero y una azotea con un espacio destinado a chill-out/terraza-café. La vivienda se encuentra tal y como se aprecian en las fotos totalmente reformada, dispone de ventiladores colgantes y 2 aires acondicionados. Esta casa dispone de placas solares fotovoltaicas las cuales están instaladas sobre el techo de la edificación de la planta alta no ocupando así espacio en la azotea.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_123806-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124603-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124643-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125513-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125401-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125400-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125300-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124035-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124048-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_123950-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_123930-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124150-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124329-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124256-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124302-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124913-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124925-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_124908-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130410-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130434-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130509-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130311-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130304-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125710-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125701-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125724-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125734-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130158-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130211-scaled.jpg"
+                },
+                {
+                    "imageOrder": 30,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130220-scaled.jpg"
+                },
+                {
+                    "imageOrder": 31,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130947-scaled.jpg"
+                },
+                {
+                    "imageOrder": 32,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130942-scaled.jpg"
+                },
+                {
+                    "imageOrder": 33,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130839-scaled.jpg"
+                },
+                {
+                    "imageOrder": 34,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130758-scaled.jpg"
+                },
+                {
+                    "imageOrder": 35,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130704-scaled.jpg"
+                },
+                {
+                    "imageOrder": 36,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125955-scaled.jpg"
+                },
+                {
+                    "imageOrder": 37,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125548-scaled.jpg"
+                },
+                {
+                    "imageOrder": 38,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130017-scaled.jpg"
+                },
+                {
+                    "imageOrder": 39,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_130300-scaled.jpg"
+                },
+                {
+                    "imageOrder": 40,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125031-scaled.jpg"
+                },
+                {
+                    "imageOrder": 41,
+                    "imageLabel": "c/larga 340.",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/IMG_20230704_125025-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "5974",
+            "propertyReference": "RH-5974-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 265000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "Av. del Ejército",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresAreaConstructed": 160,
+                "featuresAreaUsable": 145,
+                "featuresBathroomNumber": 2,
+                "featuresBedroomNumber": 3,
+                "featuresBuiltYear": 1975,
+                "featuresConservation": "toRestore",
+                "featuresParkingAvailable": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Excepcional y magna vivienda independiente en una sola planta con apartamento para invitado/alquiler con su propia entrada independiente. Propiedad situada a menos de 40 mtrs de distancia de la misma calle peatonal. Esta casa esta construida en una parcela de 627m2 en la que se encuentran arboles frutales, pozo, gallinero, trastero, perrera y taller/almacén así como un resto de patio de mas de 400m2 aprox. La casa principal que da fachada a la avenida dispone de 3 dormitorios, salón, cocina, comedor, baño, recibidor, terraza exterior, patio interior, azotea, pozo y aljibe. El portaje, ventanas, alicatados, solería y cocina son totalmente nuevos, la reforma aludida es respecto a paredes principalmente. Y el apartamento con entrada independiente también esta recién reformado. La opción de garaje es totalmente posible. El valor por metro de esta compraventa es uno de los valores mas rentables que se están dando a día de hoy en esta zona.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230330_193856-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190100-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190108-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193431-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190218-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190139-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193358-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193612-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190335-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190319-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190258-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190240-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190405-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190431-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190341-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193243-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193256-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193418-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193948-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193845-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193729-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193642-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193620-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193542-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191908-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191944-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193158-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193205-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191849-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "5953",
+            "propertyReference": "RH-5953-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 147000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "C. Madre Teresa de Calcuta",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": 56,
+                "featuresAreaUsable": 49,
+                "featuresBathroomNumber": 1,
+                "featuresBedroomNumber": 2,
+                "featuresBuiltYear": 0,
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Bien ubicado y muy práctico piso situado en pleno centro- casco antiguo de la localidad a 100 metros de la calle Isaac peral y a 2 minutos de la playa cruz del mar y a 5 minutos de la playa de regla. Dispone de 2 dormitorios uno de ellos con armario empotrado, salón comedor al cual le pertenece un balcón exterior, cocina independiente, baño totalmente reformado, azotea compartida con un trastero privado. La vivienda se encuentra en un entorno rodeado de todo tipos de comercios así como restaurantes y bares.",
+                        ""
+                    ]
+                ]
+            }
+        },
+        {
+            "propertyCode": "5854",
+            "propertyReference": "RH-5854-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 50000
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "Av. de la Estación",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Terreno",
+                "featuresAreaConstructed": 125,
+                "featuresAreaUsable": 0,
+                "featuresBathroomNumber": 0,
+                "featuresBedroomNumber": 0,
+                "featuresBuiltYear": 0,
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Solar en venta en zona nueva de expansión de la localidad, en la que el uso permitido es residencial, comercial y dotacional, lo cual quiere decir que las necesidades básicas de una familia para una vida normal están totalmente garantizadas, colegios, farmacias, comercios, viviendas etc.. . En la zona ya se están realizando construcciones particulares, y dentro del desarrollo también. En esta zona se va a edificar el bulevar que cruza desde el Polideportivo hasta la Avenida de Jaén. Acceso rodado, vía urbana y zona totalmente desarrollada.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174025-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174550-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174618-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174327-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174727-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174257-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174337-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174701-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174013-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174706-1-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "5836",
+            "propertyReference": "RH-5836-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 28500
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "Av. de Rota",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Terreno",
+                "featuresAreaConstructed": 250,
+                "featuresAreaUsable": 0,
+                "featuresBathroomNumber": 0,
+                "featuresBedroomNumber": 0,
+                "featuresBuiltYear": 0,
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Parcela de terreno con cabida de unos 250m2 aproximadamente. Dispone de acceso rodado, de agua potable, y disponer de luz es tan sencillo como abonar los importes correspondientes para su instalación. Da fachada a la misma carretera así como a entrada de camino particular, la parcela hace esquina y la zona esta totalmente edificada por viviendas de uso habitual, lo cual están habitadas durante todo el año aunque es suelo rústico. La distancia a la playa de las tres piedras que sería la mas cercana no estaría a menos de unos 5 minutos en coche, lo cual es totalmente posible dada la disposición de aparcamientos en la mencionada playa. Esta parcela dispone de alcantarillado.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155013-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155046-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155035-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155058-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/IMG-20220331-WA0053.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/IMG-20220331-WA0054.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": "5824",
+            "propertyReference": "RH-5824-property",
+            "propertyOperation": {
+                "operationType": "sale",
+                "operationPrice": 64900
+            },
+            "propertyAddress": {
+                "addressVisibility": "street",
+                "addressStreetName": "Av. de Madrid",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": 36,
+                "addressCoordinatesLongitude": -6
+            },
+            "propertyFeatures": {
+                "featuresType": "Apartamento",
+                "featuresAreaConstructed": 43,
+                "featuresAreaUsable": 50,
+                "featuresBathroomNumber": 1,
+                "featuresBedroomNumber": 0,
+                "featuresBuiltYear": 0,
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Practico, útil y muy bien ubicado, local ( con escrituras de viviendas, lo cual el cambio de uso es tan solo físico ya que no documental ) con superficie aproximada de 40m2, dispone de terraza y aseo así como de patio interior desahogo donde poder ventilar también. Este local puede ser comprado junto con el que queda a su derecha visto desde su frente y conseguir así unos 80m2 aprox, así como también la totalidad de la terraza y el patio interior. En la terraza que queda a día de hoy en los 40m2 aprox. de superficie en el local puede dar cabida a espacio para mesa y cuatro sillas para almuerzos, comidas, encuentros etc. La reforma que necesita este local no es mas que aquella que se destine a la adaptación de la posible vivienda ya que su estado actual es el que se aprecia en las fotos.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094707-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094700-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093530-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093639-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093546-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093554-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094032-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_095039-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/foto-rey-2-1.jpeg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_094134-1024x768-1-e1683066557972.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_093558-1024x768-1-e1683066494759.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_093305-1024x768-1-e1683066525502.jpg"
+                }
+            ]
+        }
+    ]
+}

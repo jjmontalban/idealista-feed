@@ -229,6 +229,7 @@ function idealista_properties_feed_generate_and_send() {
         'customerCountry' => "Spain",
         'customerCode' => $_POST['code'],
         'customerReference' => $_POST['reference'],
+        'customerSendDate' => date("Y/m/d H:i:s"),
         'customerContact' => [
             'contactName' => $_POST['name'],
             'contactEmail' => $_POST['email'],
@@ -236,8 +237,7 @@ function idealista_properties_feed_generate_and_send() {
             'contactPrimaryPhoneNumber' => $_POST['phone_1'],
             'contactSecondaryPhonePrefix' => "34",
             'contactSecondaryPhoneNumber' => $_POST['phone_2']
-        ],
-        'contactProperties' => [],
+        ]
     ];
     
     //Llamadas previas a la API
@@ -264,8 +264,8 @@ function idealista_properties_feed_generate_and_send() {
     if ( is_wp_error( $response_type ) ) {
         wp_die( __( 'Error retrieving property types.', 'idealista-properties-feed' ) );
     }
-    $types = json_decode( wp_remote_retrieve_body( $response_type ), true );    
-    
+    $types = json_decode( wp_remote_retrieve_body( $response_type ), true );
+
     //obtengo el json que muestra los datos de las caracteristicas de propiedades
     $feature_url = 'https://chipicasa.com/wp-json/wp/v2/property-features';
     $response_feature = wp_remote_get( $feature_url );
@@ -282,59 +282,56 @@ function idealista_properties_feed_generate_and_send() {
         $address = splitAddress( $property['property_meta']['REAL_HOMES_property_address'] );
 
         //obtener status. En venta o alquileres
-        $status = 0;
-        foreach ($statuses as $item) {
-            if ($item->id == $property['property-statuses']) {
-                $status = $item->name;
-                break;
-            }
-        }
+        $status = null;
+        foreach ($property['property-statuses'] as $status_id) {
+            foreach ($statuses as $status_data) {
+                if ($status_data['id'] === $status_id) {
+                    if($status_data['name'] == "En Venta")
+                        $status = "sale";
+                    else    
+                        $status = "rent";
 
-        //obtener tipo de inmueble
-        $type = null;
-        foreach ($property['property-types'] as $typeId) {
-            foreach ($types as $typeData) {
-                if ($typeData['id'] === $typeId) {
-                    $type = $typeData['name'];
                     break 2; // Salir de ambos bucles cuando se encuentra la coincidencia
                 }
             }
         }
 
-        $propertyData = [
-            'propertyCode' => $property['id'],
+        //obtener tipo de inmueble
+        $type = null;
+        foreach ($property['property-types'] as $type_id) {
+            foreach ($types as $type_data) {
+                if ($type_data['id'] === $type_id) {
+                    $type = $type_data['name'];
+                    break 2; // Salir de ambos bucles cuando se encuentra la coincidencia
+                }
+            }
+        }
+
+        $customerProperties = [
+            'propertyCode' => strval($property['id']),
             'propertyReference' => $property['property_meta']['REAL_HOMES_property_id'],
-            'propertyVisibility' => "full",
             'propertyOperation' => [
                 'operationType' => $status,
-                'operationPrice' => $property['property_meta']['REAL_HOMES_property_price'],
-            ],
-            'propertyContact' => [
-                'contactName' => $destino['customerContact']['contactName'],
-                'contactEmail' => $destino['customerContact']['contactEmail'],
-                'contactPrimaryPhonePrefix' => "34",
-                'contactPrimaryPhoneNumber' => $destino['customerContact']['contactPrimaryPhoneNumber'],
-                'contactSecondaryPhonePrefix' => "34",
-                'contactSecondaryPhoneNumber' => $destino['customerContact']['contactSecondaryPhoneNumber'],
+                'operationPrice' => intval($property['property_meta']['REAL_HOMES_property_price']),
             ],
             'propertyAddress' => [
+                'addressVisibility' => 'street',
                 'addressStreetName' => $address['addressStreetName'],
                 'addressStreetNumber' => $address['addressStreetNumber'],
                 'addressPostalCode' => $address['addressPostalCode'],
                 'addressTown' => $address['addressTown'],
-                'addressVisibility' => 'street',
                 'addressCountry' => 'Spain',
                 'addressCoordinatesPrecision' => 'moved',
-                'addressCoordinatesLatitude' => $property['property_meta']['REAL_HOMES_property_location']['latitude'],
-                'addressCoordinatesLongitude' => $property['property_meta']['REAL_HOMES_property_location']['longitude'],
+                'addressCoordinatesLatitude' => intval($property['property_meta']['REAL_HOMES_property_location']['latitude']),
+                'addressCoordinatesLongitude' => intval($property['property_meta']['REAL_HOMES_property_location']['longitude']),
             ],
             'propertyFeatures' => [
                 'featuresType' => $type,
-                'featuresAreaConstructed' => $property['property_meta']['REAL_HOMES_property_size'],
-                'featuresAreaUsable' => $property['property_meta']['REAL_HOMES_property_lot_size'],
-                'featuresBathroomNumber' => $property['property_meta']['REAL_HOMES_property_bathrooms'],
-                'featuresBedroomNumber' => $property['property_meta']['REAL_HOMES_property_bedrooms'],
-                'featuresBuiltYear' => $property['property_meta']['REAL_HOMES_property_year_built'],
+                'featuresAreaConstructed' => intval($property['property_meta']['REAL_HOMES_property_size']),
+                'featuresAreaUsable' => intval($property['property_meta']['REAL_HOMES_property_lot_size']),
+                'featuresBathroomNumber' => intval($property['property_meta']['REAL_HOMES_property_bathrooms']),
+                'featuresBedroomNumber' => intval($property['property_meta']['REAL_HOMES_property_bedrooms']),
+                'featuresBuiltYear' => intval($property['property_meta']['REAL_HOMES_property_year_built']),
                 'featuresConditionedAir' => in_array(75, $property['property-features']) ? true : false,
                 'featuresConservation' => in_array(73, $property['property-features']) ? 'Good' : 'toRestore',
                 'featuresEnergyCertificateRating' => $property['REAL_HOMES_energy_class'],
@@ -356,7 +353,6 @@ function idealista_properties_feed_generate_and_send() {
                 'descriptionLanguage' => 'spanish',
                 'descriptionText' => $property['property_meta']['REAL_HOMES_additional_details_list'],
             ],
-            /* 'propertyImages' => $property['property_meta']['REAL_HOMES_property_images'], */
             'propertyVideos' => [],
             'propertyVirtualTours' => [
                 'virtualTour3D' => [
@@ -373,7 +369,7 @@ function idealista_properties_feed_generate_and_send() {
     
         $imageOrder = 1; // Inicializar el contador en 1
         foreach ($property['property_meta']['REAL_HOMES_property_images'] as $image) {
-            $propertyData['propertyImages'][] = [
+            $customerProperties['propertyImages'][] = [
                 'imageOrder' => $imageOrder,
                 'imageLabel' => $property['title']['rendered'],
                 'imageUrl' => $image['full_url'],
@@ -381,18 +377,18 @@ function idealista_properties_feed_generate_and_send() {
             $imageOrder++; // Incrementar el contador en cada iteración
         }
     
-        foreach ($property['videos'] as $video) {
-            $propertyData['propertyVideos'][] = [
+       /*  foreach ($property['videos'] as $video) {
+            $customerProperties['propertyVideos'][] = [
                 'videoOrder' => $video['order'],
                 'videoUrl' => $video['url'],
             ];
-        }
+        } */
     
-        $destino['properties'][] = filterNestedArray($propertyData);
+        $destino['customerProperties'][] = filterNestedArray($customerProperties);
         
     }
     // Crear el archivo JSON y almacenarlo en el directorio del plugin
-    $file_path = plugin_dir_path( __FILE__ ) . 'properties.json';
+    $file_path = plugin_dir_path( __FILE__ ) . $destino['customerCode'] . '.json';
 
     $json_data = json_encode( $destino, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
 
