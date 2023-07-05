@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Idealista Properties Feed
- * Plugin URI: https://example.com/
+ * Plugin URI: https://jjmontalban.github.io/
  * Description: Generates and sends a properties feed to Idealista.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://example.com/
+ * Author: JJMontalban
+ * Author URI: https://jjmontalban.github.io/
  * Text Domain: idealista-properties-feed
  * Domain Path: /languages
  */
@@ -94,7 +94,7 @@ function idealista_properties_feed_render_admin_page() {
                 <label for="code"><?php _e( 'Código:', 'idealista-properties-feed' ); ?></label>
             </th>
             <td>
-                <input type="number" name="code" id="code" class="regular-text" value="<?php echo esc_attr( $form_values['code'] ); ?>" required>
+                <input type="text" name="code" id="code" class="regular-text" value="<?php echo esc_attr( $form_values['code'] ); ?>" required>
             </td>
         </tr>
         <tr>
@@ -166,6 +166,9 @@ function splitAddress($address) {
     // Obtener el código postal y la ciudad
     $addressPostalCodeTownParts = explode(' ', $parts[1]);
     $addressPostalCode = $addressPostalCodeTownParts[0];
+    //Si hay fallos en desglosar la dirección aplicamos 11550 al codigo postal que es un campo obligatorio
+    if (!is_numeric($addressPostalCode))
+        $addressPostalCode = '11550';
     $addressTown = implode(' ', array_slice($addressPostalCodeTownParts, 1));
     
     return [
@@ -174,6 +177,30 @@ function splitAddress($address) {
         'addressPostalCode' => $addressPostalCode,
         'addressTown' => $addressTown
     ];
+}
+
+// Funcion auxiliar para no insertar en el json los campos con valores null o false
+function filterNestedArray($array) {
+    if (is_array($array)) {
+        $filteredArray = [];
+
+        foreach ($array as $key => $value) {
+            if ($value !== null && $value !== false) {
+                if (is_array($value)) {
+                    $filteredValue = filterNestedArray($value);
+                    if (!empty($filteredValue)) {
+                        $filteredArray[$key] = $filteredValue;
+                    }
+                } else {
+                    $filteredArray[$key] = $value;
+                }
+            }
+        }
+
+        return $filteredArray;
+    }
+
+    return $array;
 }
 
 
@@ -264,11 +291,13 @@ function idealista_properties_feed_generate_and_send() {
         }
 
         //obtener tipo de inmueble
-        $type = 0;
-        foreach ($types as $item) {
-            if ($item->id == $property['property-types']) {
-                $type = $item->name;
-                break;
+        $type = null;
+        foreach ($property['property-types'] as $typeId) {
+            foreach ($types as $typeData) {
+                if ($typeData['id'] === $typeId) {
+                    $type = $typeData['name'];
+                    break 2; // Salir de ambos bucles cuando se encuentra la coincidencia
+                }
             }
         }
 
@@ -281,12 +310,12 @@ function idealista_properties_feed_generate_and_send() {
                 'operationPrice' => $property['property_meta']['REAL_HOMES_property_price'],
             ],
             'propertyContact' => [
-                'contactName' => $destino['contactName'],
-                'contactEmail' => $destino['contactEmail'],
+                'contactName' => $destino['customerContact']['contactName'],
+                'contactEmail' => $destino['customerContact']['contactEmail'],
                 'contactPrimaryPhonePrefix' => "34",
-                'contactPrimaryPhoneNumber' => $destino['contactPrimaryPhoneNumber'],
+                'contactPrimaryPhoneNumber' => $destino['customerContact']['contactPrimaryPhoneNumber'],
                 'contactSecondaryPhonePrefix' => "34",
-                'contactSecondaryPhoneNumber' => $destino['contactSecondaryPhoneNumber'],
+                'contactSecondaryPhoneNumber' => $destino['customerContact']['contactSecondaryPhoneNumber'],
             ],
             'propertyAddress' => [
                 'addressStreetName' => $address['addressStreetName'],
@@ -327,7 +356,7 @@ function idealista_properties_feed_generate_and_send() {
                 'descriptionLanguage' => 'spanish',
                 'descriptionText' => $property['property_meta']['REAL_HOMES_additional_details_list'],
             ],
-            'propertyImages' => $property['property_meta']['REAL_HOMES_property_images'],
+            /* 'propertyImages' => $property['property_meta']['REAL_HOMES_property_images'], */
             'propertyVideos' => [],
             'propertyVirtualTours' => [
                 'virtualTour3D' => [
@@ -343,7 +372,7 @@ function idealista_properties_feed_generate_and_send() {
         ];
     
         $imageOrder = 1; // Inicializar el contador en 1
-        foreach ($property['images'] as $image) {
+        foreach ($property['property_meta']['REAL_HOMES_property_images'] as $image) {
             $propertyData['propertyImages'][] = [
                 'imageOrder' => $imageOrder,
                 'imageLabel' => $property['title']['rendered'],
@@ -359,7 +388,8 @@ function idealista_properties_feed_generate_and_send() {
             ];
         }
     
-        $destino['properties'][] = $propertyData;
+        $destino['properties'][] = filterNestedArray($propertyData);
+        
     }
     // Crear el archivo JSON y almacenarlo en el directorio del plugin
     $file_path = plugin_dir_path( __FILE__ ) . 'properties.json';
