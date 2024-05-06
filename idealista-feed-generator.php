@@ -83,7 +83,7 @@ function idealista_properties_feed_generate() {
                 'propertyOperation' => array(
                     'operationType' => ($inmueble_data['tipo_operacion'] === 'venta') ? 'sale' : 'rent',
                     'operationPrice' => ($inmueble_data['tipo_operacion'] === 'venta') ? floatval( $inmueble_data['precio_venta'] ) : floatval( $inmueble_data['precio_alquiler'] ),
-                    'operationPriceCommunity' => isset($inmueble_data['gastos_comunidad']) && $inmueble_data['gastos_comunidad'] >= 1 ? floatval($inmueble_data['gastos_comunidad']) : null,                ),
+                    'operationPriceCommunity' => isset($inmueble_data['gastos_comunidad']) && $inmueble_data['gastos_comunidad'] >= 1 ? floatval($inmueble_data['gastos_comunidad']) : null ),
                 'propertyContact' => array(
                     'contactName' => $form_values['name'],
                     'contactEmail' => $form_values['email'],
@@ -139,12 +139,13 @@ function idealista_properties_feed_generate() {
                         'featuresType' => 'flat',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
                         'featuresAreaPlot' => intval( $inmueble_data['m_utiles'] ),
-                        'featuresAreaUsable' => intval( $inmueble_data['m_parcela'] ),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
+                        'featuresAreaUsable' => intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela']),
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
                         'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
                         'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
                         'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
+                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        
+                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
                         'featuresLiftAvailable' => $inmueble_data['ascensor'] == 'si' ? true : false,
                         'featuresWindowsLocation' => $inmueble_data['int_ext'],
                         
@@ -187,13 +188,13 @@ function idealista_properties_feed_generate() {
                         'featuresType' => $featuresType,
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
                         'featuresAreaPlot' => intval( $inmueble_data['m_utiles'] ),
-                        'featuresAreaUsable' => intval( $inmueble_data['m_parcela'] ),
+                        'featuresAreaUsable' => intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela']),
                         'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,
                         'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
                         'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
                         'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
 
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
                         'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
                         'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
                         'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
@@ -240,14 +241,14 @@ function idealista_properties_feed_generate() {
                         'featuresType' => $featuresType,
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
                         'featuresAreaPlot' => intval( $inmueble_data['m_utiles'] ),
-                        'featuresAreaUsable' => intval( $inmueble_data['m_parcela'] ),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
+                        'featuresAreaUsable' => intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela']),
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
                         'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
                         'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
                         'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
+                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        
+                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
                         'featuresWindowsLocation' => $inmueble_data['int_ext'],
-                        
                         'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
                         'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
                         'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
@@ -268,10 +269,10 @@ function idealista_properties_feed_generate() {
                     $property['propertyFeatures'] = array(
                         'featuresType' => 'premises',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                        'featuresFacadeArea' => intval( $inmueble_data['m_lineales'] ),
+                        'featuresFacadeArea' => intval( $inmueble_data['m_lineales'] ) == 0 ? intval( $inmueble_data['m_utiles'] ) : intval( $inmueble_data['m_lineales'] ),
                         'featuresFloorsProperty' => intval( $inmueble_data['num_plantas'] ),
                         'featuresRooms' => intval( $inmueble_data['num_estancias'] ),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
                         'featuresEquippedKitchen' => in_array('cocina_equipada', $inmueble_data['caract_local']),
                         'featuresHeating' => in_array('calefaccion', $inmueble_data['caract_local']),
                         'featuresSecurityAlarm' => in_array('alarma', $inmueble_data['caract_local']),
@@ -301,8 +302,8 @@ function idealista_properties_feed_generate() {
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
                         'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
                         'featuresWindowsLocation' => isset($inmueble_data['int_ext']) ? $inmueble_data['int_ext'] : '',
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
-                        'featuresAreaUsable' => intval( $inmueble_data['m_utiles'] ),
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
+                        'featuresAreaUsable' => intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela']),
                         'featuresLiftNumber' => intval( $inmueble_data['num_ascensores'] ),
                         'featuresParkingSpacesNumber' => intval( $inmueble_data['num_plazas'] ),
                         'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,                        
@@ -317,8 +318,7 @@ function idealista_properties_feed_generate() {
                         'featuresType' => 'garage',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_plaza'] ),
                         'featuresGarageCapacityType' => idealista_map_garage_type($inmueble_data['tipo_plaza']),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
-                    );
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null );
                     $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_garage_features($inmueble_data['caract_garaje']));
                     break;
 
@@ -327,8 +327,7 @@ function idealista_properties_feed_generate() {
                         'featuresType' => idealista_map_terray_type($inmueble_data['tipo_terreno']),
                         'featuresAreaPlot' => intval( $inmueble_data['superf_terreno'] ),
                         'featuresUtilitiesRoadAccess' => $inmueble_data['acceso_rodado'] === 'si_tiene' ? true : false,
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) ? intval($inmueble_data['num_banos']) : 0,
-                    ) + idealista_map_terrain_class($inmueble_data['calif_terreno']);
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null) + idealista_map_terrain_class($inmueble_data['calif_terreno']);
                     break;
             }
             
@@ -515,10 +514,10 @@ function idealista_map_orientation($idealista_map_orientation_array) {
 // Mapear los campos de energía
 function idealista_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emisiones) {
     $mapped_energy_fields = array(
-        'featuresEnergyCertificatePerformance' => floatval( $consumo ),
+        'featuresEnergyCertificatePerformance' => max( 0, floatval($consumo) ),
         'featuresEnergyCertificateRating' => idealista_map_energy_certificate_rating($calif_consumo),
         'featuresEnergyCertificateEmissionsRating' => idealista_map_energy_certificate_emissions_rating($calif_emis),
-        'featuresEnergyCertificateEmissionsValue' => floatval( $emisiones ),
+        'featuresEnergyCertificateEmissionsValue' => max( 0, floatval( $emisiones ) ),
     );
 
     // Filtra los valores null de la matriz
