@@ -1,0 +1,1380 @@
+{
+    "customerCountry": "Spain",
+    "customerCode": "ilcc7da95e5ef3199fe8c4551c81e82e51afa951740",
+    "customerReference": "Idealista Feed",
+    "customerContact": {
+        "contactName": "Chipicasa SL",
+        "contactEmail": "info@chipicasa.com",
+        "contactPrimaryPhonePrefix": "34",
+        "contactPrimaryPhoneNumber": "692606772",
+        "contactSecondaryPhonePrefix": "34",
+        "contactSecondaryPhoneNumber": "623296900"
+    },
+    "contactProperties": [],
+    "properties": [
+        {
+            "propertyCode": 5974,
+            "propertyReference": "RH-5974-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "265000"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "Av. del Ejército",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7354546",
+                "addressCoordinatesLongitude": "-6.4337317"
+            },
+            "propertyFeatures": {
+                "featuresAreaConstructed": "160",
+                "featuresAreaUsable": "145",
+                "featuresBathroomNumber": "2",
+                "featuresBedroomNumber": "3+2",
+                "featuresBuiltYear": "1975",
+                "featuresConservation": "toRestore",
+                "featuresParkingAvailable": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Excepcional y magna vivienda independiente en una sola planta con apartamento para invitado/alquiler con su propia entrada independiente. Propiedad situada a menos de 40 mtrs de distancia de la misma calle peatonal. Esta casa esta construida en una parcela de 627m2 en la que se encuentran arboles frutales, pozo, gallinero, trastero, perrera y taller/almacén así como un resto de patio de mas de 400m2 aprox. La casa principal que da fachada a la avenida dispone de 3 dormitorios, salón, cocina, comedor, baño, recibidor, terraza exterior, patio interior, azotea, pozo y aljibe. El portaje, ventanas, alicatados, solería y cocina son totalmente nuevos, la reforma aludida es respecto a paredes principalmente. Y el apartamento con entrada independiente también esta recién reformado. La opción de garaje es totalmente posible. El valor por metro de esta compraventa es uno de los valores mas rentables que se están dando a día de hoy en esta zona.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230330_193856-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190100-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190108-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193431-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190218-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190139-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193358-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193612-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190335-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190319-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190258-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190240-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190405-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190431-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_190341-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193243-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193256-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193418-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193948-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193845-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193729-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193642-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193620-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193542-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191908-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191944-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193158-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_193205-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "Av/ Ejercito 265",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/07/20230510_191849-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5953,
+            "propertyReference": "RH-5953-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "147000"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "C. Madre Teresa de Calcuta",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7382804",
+                "addressCoordinatesLongitude": "-6.4366931"
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": "56",
+                "featuresAreaUsable": "49",
+                "featuresBathroomNumber": "1",
+                "featuresBedroomNumber": "2",
+                "featuresBuiltYear": "",
+                "featuresConditionedAir": true,
+                "featuresConservation": "Good",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Bien ubicado y muy práctico piso situado en pleno centro- casco antiguo de la localidad a 100 metros de la calle Isaac peral y a 2 minutos de la playa cruz del mar y a 5 minutos de la playa de regla. Dispone de 2 dormitorios uno de ellos con armario empotrado, salón comedor al cual le pertenece un balcón exterior, cocina independiente, baño totalmente reformado, azotea compartida con un trastero privado. La vivienda se encuentra en un entorno rodeado de todo tipos de comercios así como restaurantes y bares.",
+                        ""
+                    ]
+                ]
+            }
+        },
+        {
+            "propertyCode": 5854,
+            "propertyReference": "RH-5854-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "50000"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "Av. de la Estación",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.736701",
+                "addressCoordinatesLongitude": "-6.4231081"
+            },
+            "propertyFeatures": {
+                "featuresType": "Terreno",
+                "featuresAreaConstructed": "125",
+                "featuresAreaUsable": "",
+                "featuresBathroomNumber": "",
+                "featuresBedroomNumber": "",
+                "featuresBuiltYear": "",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Solar en venta en zona nueva de expansión de la localidad, en la que el uso permitido es residencial, comercial y dotacional, lo cual quiere decir que las necesidades básicas de una familia para una vida normal están totalmente garantizadas, colegios, farmacias, comercios, viviendas etc.. . En la zona ya se están realizando construcciones particulares, y dentro del desarrollo también. En esta zona se va a edificar el bulevar que cruza desde el Polideportivo hasta la Avenida de Jaén. Acceso rodado, vía urbana y zona totalmente desarrollada.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174025-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174550-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174618-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174327-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174727-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174257-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174337-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174701-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174013-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Terreno av. de la estación",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220406_174706-1-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5836,
+            "propertyReference": "RH-5836-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "28500"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "Av. de Rota",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7331231",
+                "addressCoordinatesLongitude": "-6.4298268"
+            },
+            "propertyFeatures": {
+                "featuresType": "Terreno",
+                "featuresAreaConstructed": "250",
+                "featuresAreaUsable": "",
+                "featuresBathroomNumber": "",
+                "featuresBedroomNumber": "",
+                "featuresBuiltYear": "",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Parcela de terreno con cabida de unos 250m2 aproximadamente. Dispone de acceso rodado, de agua potable, y disponer de luz es tan sencillo como abonar los importes correspondientes para su instalación. Da fachada a la misma carretera así como a entrada de camino particular, la parcela hace esquina y la zona esta totalmente edificada por viviendas de uso habitual, lo cual están habitadas durante todo el año aunque es suelo rústico. La distancia a la playa de las tres piedras que sería la mas cercana no estaría a menos de unos 5 minutos en coche, lo cual es totalmente posible dada la disposición de aparcamientos en la mencionada playa. Esta parcela dispone de alcantarillado.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155013-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155046-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155035-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20220504_155058-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/IMG-20220331-WA0053.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Camino Olivar",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/IMG-20220331-WA0054.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5824,
+            "propertyReference": "RH-5824-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "64900"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "Av. de Madrid",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7325818",
+                "addressCoordinatesLongitude": "-6.433396"
+            },
+            "propertyFeatures": {
+                "featuresType": "Apartamento",
+                "featuresAreaConstructed": "43",
+                "featuresAreaUsable": "50",
+                "featuresBathroomNumber": "1",
+                "featuresBedroomNumber": "",
+                "featuresBuiltYear": "",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Practico, útil y muy bien ubicado, local ( con escrituras de viviendas, lo cual el cambio de uso es tan solo físico ya que no documental ) con superficie aproximada de 40m2, dispone de terraza y aseo así como de patio interior desahogo donde poder ventilar también. Este local puede ser comprado junto con el que queda a su derecha visto desde su frente y conseguir así unos 80m2 aprox, así como también la totalidad de la terraza y el patio interior. En la terraza que queda a día de hoy en los 40m2 aprox. de superficie en el local puede dar cabida a espacio para mesa y cuatro sillas para almuerzos, comidas, encuentros etc. La reforma que necesita este local no es mas que aquella que se destine a la adaptación de la posible vivienda ya que su estado actual es el que se aprecia en las fotos.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094707-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094700-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093530-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093639-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093546-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_093554-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094032-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_095039-1-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/foto-rey-2-1.jpeg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_094134-1024x768-1-e1683066557972.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_093558-1024x768-1-e1683066494759.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2020/02/20220414_093305-1024x768-1-e1683066525502.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5804,
+            "propertyReference": "RH-5804-property",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "64900"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "Av. de Madrid",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7325818",
+                "addressCoordinatesLongitude": "-6.433396"
+            },
+            "propertyFeatures": {
+                "featuresType": "Apartamento",
+                "featuresAreaConstructed": "43",
+                "featuresAreaUsable": "50",
+                "featuresBathroomNumber": "1",
+                "featuresBedroomNumber": "",
+                "featuresBuiltYear": "",
+                "featuresConditionedAir": true,
+                "featuresConservation": "toRestore",
+                "featuresGarden": true,
+                "featuresOrientationEast": true,
+                "featuresOrientationWest": true,
+                "featuresOrientationNorth": true,
+                "featuresOrientationSouth": true,
+                "featuresPool": true,
+                "featuresStorage": true,
+                "featuresStudio": true,
+                "featuresTerrace": true,
+                "featuresWardrobes": true
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Practico, útil y muy bien ubicado, local ( con escrituras de viviendas, lo cual el cambio de uso es tan solo físico ya que no documental ) con superficie aproximada de 40m2, dispone de terraza y aseo así como de patio interior desahogo donde poder ventilar también. Este local puede ser comprado junto con el que queda a su izquierda visto desde su frente y conseguir así unos 80m2 aprox, así como también la totalidad de la terraza y el patio interior. En la terraza que queda a día de hoy en los 40m2 aprox. de superficie en el local puede dar cabida a espacio para mesa y cuatro sillas para almuerzos, comidas, encuentros etc. La reforma que necesita este local no es mas que aquella que se destine a la adaptación de la posible vivienda ya que su estado actual es el que se aprecia en las fotos.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094627-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094612-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094604-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094435-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094246-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094308-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/foto-rey-2.jpeg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094032-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094040-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_094842-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Local Av. Madrid",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/05/20230327_095039-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5740,
+            "propertyReference": "calle pozo rey",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "135000"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "11550 Isaac Peral 37 Local 1 Chipiona",
+                "addressPostalCode": "11550",
+                "addressTown": "",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7408",
+                "addressCoordinatesLongitude": "-6.43587"
+            },
+            "propertyFeatures": {
+                "featuresType": "Residencial",
+                "featuresAreaConstructed": "80",
+                "featuresAreaUsable": "250",
+                "featuresBathroomNumber": "1",
+                "featuresBedroomNumber": "3",
+                "featuresBuiltYear": "1985",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Vivienda independiente en pleno centro de la localidad, a tan solo 200mtrs de la misma playa de la Cruz Del Mar, y a 100mtrs de la plaza de abastos. Está en condiciones de reforma como bien se puede apreciar en las fotos. La parcela en la que se ubica es de unos 250m2 aprox, restando casi el 50% de la misma por edificar. Edificabilidad de la zona 1.4 en manzana cerrada, plantas permitidas bajo + primero. El Local que se aprecia desde la fachada no forma parte del cuerpo físico del inmueble que compone la venta. Para cualquier tipo de información no dudes en contactar con chipicasa!.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191133-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191219-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191442-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191510-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191535-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220504_191538-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220414_093253-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220414_093002-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220414_092915-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220725_212444-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220922_191004-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Calle pozo rey",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220414_093113-scaled.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5681,
+            "propertyReference": "calle tulipan",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "224900"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "C. Tulipán",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7334336",
+                "addressCoordinatesLongitude": "-6.433986"
+            },
+            "propertyFeatures": {
+                "featuresType": "Residencial",
+                "featuresAreaConstructed": "120",
+                "featuresAreaUsable": "",
+                "featuresBathroomNumber": "2",
+                "featuresBedroomNumber": "4",
+                "featuresBuiltYear": "",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Distinguido Dúplex independiente a menos de 5 minutos a pie de la misma playa de Regla, hace esquina, con lo que ofrece mayor ventilación, luminosidad e independencia. Esta vivienda se ubica en un entorno residencial-comercial en el que la calle peatonal se encuentra a menos de 3 minutos caminando. La vivienda dispone de 3 dormitorios, salón-comedor de amplias dimensiones, cocina con lavadero y patio desahogo, terraza exterior idónea para comidas y encuentros, y en la cubierta remata la azotea transitable con una amplia habitación. La distancia a la playa de Regla no supera los 400mtrs. El estado en el que se encuentra es el mismo que se aprecia en las fotos y las mejoras son: cocina, baño y aseo.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103708-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103719-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103747-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103751-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103757-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103828-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103917-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103934-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_103956-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104001-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104031-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104050-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104100-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104117-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104132-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104158-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104212-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104324-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104351-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104409-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104425-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_104430-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105529-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105621-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105712-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105723-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105759-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105808-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105818-scaled.jpg"
+                },
+                {
+                    "imageOrder": 30,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_105825-scaled.jpg"
+                },
+                {
+                    "imageOrder": 31,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220726_110441-scaled.jpg"
+                },
+                {
+                    "imageOrder": 32,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/cropped-cropped-20220321_0858481-scaled-1-1024x837-1.jpg"
+                },
+                {
+                    "imageOrder": 33,
+                    "imageLabel": "Calle Tulipán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/cropped-20220414_093305-scaled-1-1024x614-1.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5658,
+            "propertyReference": "Calle pez espada",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "168500"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "C. Pez Espada",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7298856",
+                "addressCoordinatesLongitude": "-6.4366486"
+            },
+            "propertyFeatures": {
+                "featuresType": "Piso",
+                "featuresAreaConstructed": "75",
+                "featuresAreaUsable": "80",
+                "featuresBathroomNumber": "2",
+                "featuresBedroomNumber": "3",
+                "featuresBuiltYear": "2007",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish",
+                "descriptionText": [
+                    [
+                        "Muy práctico, precioso y rentable piso en primera planta con 3 dormitorios, salón-comedor, cocina, baño, aseo, balcón, terraza y azotea con trastero y posibilidad de instalación de placas sándwich para obtener alguna otra habitación dadas las dimensiones. El piso es seminuevo, está muy bien orientado, entra gran claridad lo cual es muy iluminado. Se ubica en un entorno residencial comercial situado a una distancia no superior a 3 minutos a pie hacia la misma playa de Regla. Cómodo salón para recibir visitas así como gran azotea para rematar los encuentros con familiares o amigos.",
+                        ""
+                    ]
+                ]
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141610-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141526-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141529-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141422-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141451-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141459-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141635-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141640-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141744-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141750-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141510-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141513-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141709-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_141716-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142032-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142041-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142124-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142139-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142249-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20220715_142332-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/cropped-cropped-20220321_0858481-scaled-1-1024x837-1.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/cropped-20220414_094134-scaled-1-1024x614-1.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/cropped-20220414_093305-scaled-1-1024x614-1.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/20220414_093558-1024x768-1.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Calle pez espada",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/03/20220414_092836-1024x768-1.jpg"
+                }
+            ]
+        },
+        {
+            "propertyCode": 5614,
+            "propertyReference": "Calle Faisán",
+            "propertyVisibility": "full",
+            "propertyOperation": {
+                "operationType": 0,
+                "operationPrice": "175000"
+            },
+            "propertyContact": {
+                "contactName": "Chipicasa SL",
+                "contactEmail": "info@chipicasa.com",
+                "contactPrimaryPhonePrefix": "34",
+                "contactPrimaryPhoneNumber": "692606772",
+                "contactSecondaryPhonePrefix": "34",
+                "contactSecondaryPhoneNumber": "623296900"
+            },
+            "propertyAddress": {
+                "addressStreetName": "C. Faisán",
+                "addressPostalCode": "11550",
+                "addressTown": "Chipiona",
+                "addressVisibility": "street",
+                "addressCountry": "Spain",
+                "addressCoordinatesPrecision": "moved",
+                "addressCoordinatesLatitude": "36.7336625",
+                "addressCoordinatesLongitude": "-6.4290594"
+            },
+            "propertyFeatures": {
+                "featuresType": "Residencial",
+                "featuresAreaConstructed": "110",
+                "featuresAreaUsable": "130",
+                "featuresBathroomNumber": "2",
+                "featuresBedroomNumber": "3",
+                "featuresBuiltYear": "1970",
+                "featuresConservation": "toRestore"
+            },
+            "propertyDescriptions": {
+                "descriptionLanguage": "spanish"
+            },
+            "propertyImages": [
+                {
+                    "imageOrder": 1,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175505-scaled.jpg"
+                },
+                {
+                    "imageOrder": 2,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175503-scaled.jpg"
+                },
+                {
+                    "imageOrder": 3,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175510-scaled.jpg"
+                },
+                {
+                    "imageOrder": 4,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175522-scaled.jpg"
+                },
+                {
+                    "imageOrder": 5,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175415-scaled.jpg"
+                },
+                {
+                    "imageOrder": 6,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175423-scaled.jpg"
+                },
+                {
+                    "imageOrder": 7,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175431-scaled.jpg"
+                },
+                {
+                    "imageOrder": 8,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175148-scaled.jpg"
+                },
+                {
+                    "imageOrder": 9,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175205-scaled.jpg"
+                },
+                {
+                    "imageOrder": 10,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175220-scaled.jpg"
+                },
+                {
+                    "imageOrder": 11,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175328-scaled.jpg"
+                },
+                {
+                    "imageOrder": 12,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175359-scaled.jpg"
+                },
+                {
+                    "imageOrder": 13,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175306-scaled.jpg"
+                },
+                {
+                    "imageOrder": 14,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175311-scaled.jpg"
+                },
+                {
+                    "imageOrder": 15,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175321-scaled.jpg"
+                },
+                {
+                    "imageOrder": 16,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175053-scaled.jpg"
+                },
+                {
+                    "imageOrder": 17,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175100-scaled.jpg"
+                },
+                {
+                    "imageOrder": 18,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174145-scaled.jpg"
+                },
+                {
+                    "imageOrder": 19,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174255-scaled.jpg"
+                },
+                {
+                    "imageOrder": 20,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174238-scaled.jpg"
+                },
+                {
+                    "imageOrder": 21,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175041-scaled.jpg"
+                },
+                {
+                    "imageOrder": 22,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174202-scaled.jpg"
+                },
+                {
+                    "imageOrder": 23,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174220-scaled.jpg"
+                },
+                {
+                    "imageOrder": 24,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174354-scaled.jpg"
+                },
+                {
+                    "imageOrder": 25,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174401-scaled.jpg"
+                },
+                {
+                    "imageOrder": 26,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174650-scaled.jpg"
+                },
+                {
+                    "imageOrder": 27,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174709-scaled.jpg"
+                },
+                {
+                    "imageOrder": 28,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174439-scaled.jpg"
+                },
+                {
+                    "imageOrder": 29,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174446-scaled.jpg"
+                },
+                {
+                    "imageOrder": 30,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174512-scaled.jpg"
+                },
+                {
+                    "imageOrder": 31,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174519-scaled.jpg"
+                },
+                {
+                    "imageOrder": 32,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174123-scaled.jpg"
+                },
+                {
+                    "imageOrder": 33,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_173927-scaled.jpg"
+                },
+                {
+                    "imageOrder": 34,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_173954-scaled.jpg"
+                },
+                {
+                    "imageOrder": 35,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174015-scaled.jpg"
+                },
+                {
+                    "imageOrder": 36,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174035-scaled.jpg"
+                },
+                {
+                    "imageOrder": 37,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_174113-scaled.jpg"
+                },
+                {
+                    "imageOrder": 38,
+                    "imageLabel": "Calle Faisán",
+                    "imageUrl": "https://chipicasa.com/wp-content/uploads/2023/04/20221109_175117-scaled.jpg"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+# Copyright (C) 2024 JJMontalban
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Idealista Properties Feed 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/idealista-feed\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-04-24T14:48:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: idealista-properties-feed\n"
+
+#. Plugin Name of the plugin
+msgid "Idealista Properties Feed"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://jjmontalban.github.io/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Idealista Properties Feed is a plugin that generates and sends a properties feed to Idealista. With this plugin, you can automate the process of sending your properties to Idealista, saving you time and effort."
+msgstr ""
+
+#. Author of the plugin
+msgid "JJMontalban"
+msgstr ""
+
+#: idealista-feed-generator.php:358
+msgid "No properties found."
+msgstr ""
+
+#: idealista-properties-feed.php:28
+#: idealista-properties-feed.php:29
+#: idealista-properties-feed.php:87
+msgid "Idealista Feed"
+msgstr ""
+
+#: idealista-properties-feed.php:44
+#: idealista-properties-feed.php:182
+msgid "Nonce verification failed."
+msgstr ""
+
+#: idealista-properties-feed.php:91
+msgid "Customer data successfully stored"
+msgstr ""
+
+#: idealista-properties-feed.php:97
+msgid "JSON file generated successfully"
+msgstr ""
+
+#: idealista-properties-feed.php:110
+msgid "Code:"
+msgstr ""
+
+#: idealista-properties-feed.php:118
+msgid "Reference:"
+msgstr ""
+
+#: idealista-properties-feed.php:124
+msgid "Idealista customer data."
+msgstr ""
+
+#: idealista-properties-feed.php:127
+msgid "Contact Name:"
+msgstr ""
+
+#: idealista-properties-feed.php:135
+msgid "Email:"
+msgstr ""
+
+#: idealista-properties-feed.php:143
+msgid "Main Phone:"
+msgstr ""
+
+#: idealista-properties-feed.php:151
+msgid "Second Phone:"
+msgstr ""
+
+#: idealista-properties-feed.php:161
+msgid "Store customer data"
+msgstr ""
+
+#: idealista-properties-feed.php:169
+msgid "Generate file"
+msgstr ""
