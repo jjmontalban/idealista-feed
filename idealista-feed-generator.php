@@ -123,6 +123,12 @@ function idealista_properties_feed_generate() {
                 }, array_keys($inmueble_data['galeria_imagenes'] ?? []), $inmueble_data['galeria_imagenes'] ?? []),
                 'propertyUrl' => get_permalink($post_id),
             );
+
+            // Verificar si los campos especiales código y referencia están vacíos
+            if (empty($property['propertyCode']) || empty($property['propertyReference'])) {
+                continue; // Saltar esta propiedad y continuar con la siguiente iteración
+            }
+
             // Agregar el video solo si no está vacío
             if (!empty($inmueble_data['video_embed'])) {
                 $property['propertyVideos'] = array(
