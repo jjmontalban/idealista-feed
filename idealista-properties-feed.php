@@ -52,6 +52,9 @@ function idealista_save_form_values() {
             'email'   => sanitize_email( $_POST['email'] ),
             'phone_1' => sanitize_text_field( $_POST['phone_1'] ),
             'phone_2' => sanitize_text_field( $_POST['phone_2'] ),
+            'ftp_server' => sanitize_text_field( $_POST['ftp_server'] ),
+            'ftp_user' => sanitize_text_field( $_POST['ftp_user'] ),
+            'ftp_pass' => sanitize_text_field( $_POST['ftp_pass'] )
         );
 
         update_option( 'idealista_customer_data', $form_values );
@@ -77,6 +80,9 @@ function idealista_render_admin_page() {
         'email'  => '',
         'phone_1' => '',
         'phone_2' => '',
+        'ftp_server' => '',
+        'ftp_user' => '',
+        'ftp_pass' => ''
     );
 
     // Combinar los valores almacenados con los valores por defecto
@@ -96,6 +102,10 @@ function idealista_render_admin_page() {
             $file_path = plugin_dir_path( __FILE__ ) . $file_name;
             $message = sprintf( __( 'JSON file generated successfully', 'idealista-properties-feed' ), $file_path );
             echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
+        }
+        elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'ftp_missing' ) {
+            $message = __( 'The JSON file was generated but not sent due to missing FTP settings.', 'idealista-properties-feed' );
+            echo '<div id="message" class="error"><p>' . esc_html( $message ) . '</p></div>';
         }
         ?>
 
@@ -152,6 +162,30 @@ function idealista_render_admin_page() {
                     </th>
                     <td>
                         <input type="tel" name="phone_2" id="phone_2" class="regular-text" pattern="[0-9]+" value="<?php echo esc_attr( $form_values['phone_2'] ); ?>" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="ftp_server"><?php _e( 'FTP Server:', 'idealista-properties-feed' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" name="ftp_server" id="ftp_server" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_server'] ); ?>" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="ftp_user"><?php _e( 'FTP User:', 'idealista-properties-feed' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" name="ftp_user" id="ftp_user" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_user'] ); ?>" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="ftp_pass"><?php _e( 'FTP Password:', 'idealista-properties-feed' ); ?></label>
+                    </th>
+                    <td>
+                        <input type="password" name="ftp_pass" id="ftp_pass" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_pass'] ); ?>" required>
                     </td>
                 </tr>
 

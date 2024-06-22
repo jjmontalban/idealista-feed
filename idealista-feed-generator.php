@@ -138,6 +138,7 @@ function idealista_properties_feed_generate() {
                     )
                 );
             }
+
             // Llenar propertyFeatures dependiendo del tipo de inmueble
             switch ($inmueble_data['tipo_inmueble']) {
                 case 'piso':
@@ -336,6 +337,7 @@ function idealista_properties_feed_generate() {
                     break;
             }
             
+            //vaciar campos nulos
             $property = idealista_remove_empty_fields($property);
             // Agregar la propiedad al array 'customerProperties'
             $property_data['customerProperties'][] = $property;
@@ -348,16 +350,47 @@ function idealista_properties_feed_generate() {
         // Convertir todos los datos a UTF-8
         $property_data = convert_to_utf8_recursively($property_data);
         // Convertir el array de propiedades a JSON
-        $json_data = json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);        // Guardar el JSON en un archivo
+        $json_data = json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         if ($json_data === false) {
-            // Algo salió mal, imprimir el error
+            // Algo salió mal
             $test = json_last_error_msg();
         }
+
+        // Guardar el archivo JSON en el servidor
         $file_path = plugin_dir_path( __FILE__ ) . $file_name;
         file_put_contents( $file_path, $json_data );
 
-        // Enviar el archivo JSON a Idealista
-        // ...
+        // Subir el archivo JSON al servidor FTP
+        $ftp_server = $form_values['ftp_server'];
+        $ftp_user = $form_values['ftp_user'];
+        $ftp_pass = $form_values['ftp_pass'];
+
+
+        if ( ! empty($ftp_server) && ! empty($ftp_user) && ! empty($ftp_pass) ) {
+            // Conexión al servidor FTP
+            $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+            $login = ftp_login($ftp_conn, $ftp_user, $ftp_pass);
+        
+            if ($login) {
+                // Subir el archivo al servidor FTP
+                if (ftp_put($ftp_conn, $file_name, $file_path, FTP_ASCII)) {
+                    _e("Successfully uploaded $file_name.", "idealista-properties-feed");
+                } else {
+                    _e("Error uploading $file_name.", "idealista-properties-feed");
+                }
+            } else {
+                _e("FTP login failed.", "idealista-properties-feed");
+            }
+        
+            // Cerrar la conexión FTP
+            ftp_close($ftp_conn);
+        }
+        else {
+            // Mostrar un mensaje de error porque faltan datos de conexión FTP
+            $redirect_url = add_query_arg( 'feed_status', 'ftp_missing', admin_url('admin.php?page=idealista-properties-feed' ) );
+            wp_safe_redirect( $redirect_url );
+            exit;
+        }
 
         // Redirigir de vuelta a la página de configuración con un mensaje de éxito
         $redirect_url = add_query_arg( 'feed_status', 'success', admin_url('admin.php?page=idealista-properties-feed' ) );
