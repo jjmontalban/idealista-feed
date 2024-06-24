@@ -100,7 +100,7 @@ function idealista_render_admin_page() {
         elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'success' ) {
             $file_name = 'properties_' . $form_values['code'] . '.json';
             $file_path = plugin_dir_path( __FILE__ ) . $file_name;
-            $message = sprintf( __( 'JSON file generated successfully', 'idealista-properties-feed' ), $file_path );
+            $message = sprintf( __( 'JSON file generated and sended successfully', 'idealista-properties-feed' ), $file_path );
             echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
         }
         elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'ftp_missing' ) {
@@ -192,7 +192,7 @@ function idealista_render_admin_page() {
             </table>
         
             <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Store customer data', 'idealista-properties-feed' ); ?>">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Store customer data & send file', 'idealista-properties-feed' ); ?>">
             </p>
         </form> 
 
