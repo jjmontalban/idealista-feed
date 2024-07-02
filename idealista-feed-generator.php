@@ -352,37 +352,75 @@ function idealista_properties_feed_generate() {
         // Convertir el array de propiedades a JSON
         $json_data = json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         if ($json_data === false) {
-            // Algo salió mal
-            $test = json_last_error_msg();
+             // Algo salió mal
+             $test = json_last_error_msg();
+             error_log("Error en la conversión JSON: " . $test);
+             wp_die("Error en la conversión JSON: " . $test);
         }
 
         // Guardar el archivo JSON en el servidor
         $file_path = plugin_dir_path( __FILE__ ) . $file_name;
         file_put_contents( $file_path, $json_data );
 
+        // Verificar el contenido del archivo antes de la transferencia
+        $contents = file_get_contents($file_path);
+        error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
+
         // Subir el archivo JSON al servidor FTP
         $ftp_server = $form_values['ftp_server'];
         $ftp_user = $form_values['ftp_user'];
         $ftp_pass = $form_values['ftp_pass'];
 
-
-        if ( ! empty($ftp_server) && ! empty($ftp_user) && ! empty($ftp_pass) ) {
+        if (!empty($ftp_server) && !empty($ftp_user) && !empty($ftp_pass)) {
             // Conexión al servidor FTP
-            $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
-            $login = ftp_login($ftp_conn, $ftp_user, $ftp_pass);
-        
-            if ($login) {
-                // Subir el archivo al servidor FTP
-                if (ftp_put($ftp_conn, $file_name, $file_path, FTP_ASCII)) {
-                    _e("Successfully uploaded $file_name.", "idealista-properties-feed");
-                } else {
-                    _e("Error uploading $file_name.", "idealista-properties-feed");
-                }
-            } else {
-                _e("FTP login failed.", "idealista-properties-feed");
+            $ftp_conn = ftp_connect($ftp_server);
+            if (!$ftp_conn) {
+                error_log("No se pudo conectar al servidor FTP: $ftp_server");
+                wp_die("No se pudo conectar al servidor FTP: $ftp_server");
             }
-        
-            // Cerrar la conexión FTP
+
+            $login = ftp_login($ftp_conn, $ftp_user, $ftp_pass);
+            if (!$login) {
+                error_log("Error de inicio de sesión en el servidor FTP: $ftp_server con el usuario: $ftp_user");
+                wp_die("Error de inicio de sesión en el servidor FTP: $ftp_server con el usuario: $ftp_user");
+            }
+
+            if ($login) {
+                ftp_pasv($ftp_conn, true); // Modo pasivo
+                error_log("Conexión FTP y autenticación exitosa al servidor: $ftp_server en modo pasivo");
+
+                // Verificar el directorio de destino
+                $remote_dir = '/';
+                if (ftp_chdir($ftp_conn, $remote_dir)) {
+                    error_log("Directorio actual en el servidor FTP: " . ftp_pwd($ftp_conn));
+                } else {
+                    error_log("No se pudo cambiar al directorio: $remote_dir");
+                    wp_die("No se pudo cambiar al directorio: $remote_dir");
+                }
+
+                // Subir el archivo al servidor FTP
+                if (ftp_put($ftp_conn, $file_name, $file_path, FTP_BINARY)) {
+                    _e("Successfully uploaded $file_name in binary mode.", "idealista-properties-feed");
+                } else {
+                    $last_error = error_get_last();
+                    error_log("Error al subir el archivo $file_name en modo binario.");
+                    error_log("Detalles del último error de PHP: " . print_r($last_error, true));
+
+                    // Intentar obtener más información del servidor FTP
+                    $ftp_response = ftp_raw($ftp_conn, 'STAT');
+                    if ($ftp_response) {
+                        error_log("Respuesta del servidor FTP: " . print_r($ftp_response, true));
+                    }
+
+                    $ftp_systype = ftp_systype($ftp_conn);
+                    if ($ftp_systype) {
+                        error_log("Tipo de sistema del servidor FTP: " . $ftp_systype);
+                    }
+
+                    wp_die("Error uploading $file_name. Detalles del error: " . print_r($last_error, true));
+                }
+            }
+
             ftp_close($ftp_conn);
         }
         else {

@@ -192,7 +192,7 @@ function idealista_render_admin_page() {
             </table>
         
             <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Store customer data & send file', 'idealista-properties-feed' ); ?>">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Store data', 'idealista-properties-feed' ); ?>">
             </p>
         </form> 
 
@@ -200,7 +200,7 @@ function idealista_render_admin_page() {
             <input type="hidden" name="action" value="idealista_properties_feed_generate">
             <?php wp_nonce_field( 'idealista_properties_feed_generate' ); ?>
             <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Generate file', 'idealista-properties-feed' ); ?>">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Generate file & send', 'idealista-properties-feed' ); ?>">
             </p>
         </form>
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-24T14:48:17+00:00\n"
+"POT-Creation-Date: 2024-07-02T07:32:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: idealista-properties-feed\n"
@@ -31,61 +31,77 @@ msgstr ""
 msgid "JJMontalban"
 msgstr ""
 
-#: idealista-feed-generator.php:358
+#: idealista-feed-generator.php:439
 msgid "No properties found."
 msgstr ""
 
 #: idealista-properties-feed.php:28
 #: idealista-properties-feed.php:29
-#: idealista-properties-feed.php:87
+#: idealista-properties-feed.php:93
 msgid "Idealista Feed"
 msgstr ""
 
 #: idealista-properties-feed.php:44
-#: idealista-properties-feed.php:182
+#: idealista-properties-feed.php:216
 msgid "Nonce verification failed."
 msgstr ""
 
-#: idealista-properties-feed.php:91
+#: idealista-properties-feed.php:97
 msgid "Customer data successfully stored"
 msgstr ""
 
-#: idealista-properties-feed.php:97
-msgid "JSON file generated successfully"
+#: idealista-properties-feed.php:103
+msgid "JSON file generated and sended successfully"
 msgstr ""
 
-#: idealista-properties-feed.php:110
+#: idealista-properties-feed.php:107
+msgid "The JSON file was generated but not sent due to missing FTP settings."
+msgstr ""
+
+#: idealista-properties-feed.php:120
 msgid "Code:"
 msgstr ""
 
-#: idealista-properties-feed.php:118
+#: idealista-properties-feed.php:128
 msgid "Reference:"
 msgstr ""
 
-#: idealista-properties-feed.php:124
+#: idealista-properties-feed.php:134
 msgid "Idealista customer data."
 msgstr ""
 
-#: idealista-properties-feed.php:127
+#: idealista-properties-feed.php:137
 msgid "Contact Name:"
 msgstr ""
 
-#: idealista-properties-feed.php:135
+#: idealista-properties-feed.php:145
 msgid "Email:"
 msgstr ""
 
-#: idealista-properties-feed.php:143
+#: idealista-properties-feed.php:153
 msgid "Main Phone:"
 msgstr ""
 
-#: idealista-properties-feed.php:151
+#: idealista-properties-feed.php:161
 msgid "Second Phone:"
 msgstr ""
 
-#: idealista-properties-feed.php:161
-msgid "Store customer data"
+#: idealista-properties-feed.php:169
+msgid "FTP Server:"
 msgstr ""
 
-#: idealista-properties-feed.php:169
-msgid "Generate file"
+#: idealista-properties-feed.php:177
+msgid "FTP User:"
+msgstr ""
+
+#: idealista-properties-feed.php:185
+msgid "FTP Password:"
+msgstr ""
+
+#: idealista-properties-feed.php:195
+msgid "Store data"
+msgstr ""
+
+#: idealista-properties-feed.php:203
+msgid "Generate file & send"
 msgstr ""
