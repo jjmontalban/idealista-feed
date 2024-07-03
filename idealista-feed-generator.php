@@ -115,12 +115,36 @@ function idealista_properties_feed_generate() {
                         'descriptionText' => substr($inmueble_data['descripcion'], 0, 4000) 
                     )
                 ),
-                'propertyImages' => array_map(function($index, $image) {
-                    return array(
-                        'imageOrder' => $index + 1,
-                        'imageUrl' => $image
-                    );
-                }, array_keys($inmueble_data['galeria_imagenes'] ?? []), $inmueble_data['galeria_imagenes'] ?? []),
+                'propertyImages' => array_merge(
+                    array_map(function($index, $image) {
+                        return array(
+                            'imageOrder' => $index + 1,
+                            'imageUrl' => $image
+                        );
+                    }, array_keys($inmueble_data['galeria_imagenes'] ?? []), $inmueble_data['galeria_imagenes'] ?? []),
+                    array_filter(
+                        array_map(function($index, $image) use ($inmueble_data) {
+                            return array(
+                                'imageOrder' => count($inmueble_data['galeria_imagenes'] ?? []) + $index + 1,
+                                'imageUrl' => $image,
+                                'imageLabel' => 'plan'
+                            );
+                        }, array_keys(array_filter([
+                            $inmueble_data['plano1'] ?? null,
+                            $inmueble_data['plano2'] ?? null,
+                            $inmueble_data['plano3'] ?? null,
+                            $inmueble_data['plano4'] ?? null
+                        ])), array_filter([
+                            $inmueble_data['plano1'] ?? null,
+                            $inmueble_data['plano2'] ?? null,
+                            $inmueble_data['plano3'] ?? null,
+                            $inmueble_data['plano4'] ?? null
+                        ])),
+                        function($image) {
+                            return !empty($image['imageUrl']);
+                        }
+                    )
+                ),
                 'propertyUrl' => get_permalink($post_id),
             );
 
