@@ -35,7 +35,7 @@ function idealista_properties_feed_generate() {
             $query->the_post();
             // Obtener los datos del inmueble
             $post_id = get_the_ID();
-            $inmueble_data = obtener_campos_inmueble($post_id);
+            $inmueble_data = obtener_campos_inmueble_feed($post_id);
             // Visibilidad direccion
             $address_visibility_options = array(
                 'direccion_exacta' => 'full',
@@ -465,6 +465,28 @@ function idealista_properties_feed_generate() {
 
 }
 add_action( 'admin_post_idealista_properties_feed_generate', 'idealista_properties_feed_generate' );
+
+/**
+ * Obtiene todos los campos personalizados del inmueble.
+ * @param int $post_id El ID del post actual.
+ * @return array Un array con todos los campos personalizados y sus valores.
+ */
+function obtener_campos_inmueble_feed($post_id) {
+    $meta_values = get_post_meta($post_id);
+
+    // Verificar si algún valor está serializado y deserializarlo
+    foreach ($meta_values as $key => $value) {
+        $meta_values[$key] = maybe_unserialize($value[0]);
+    }
+
+    // Verificación específica para 'tipo_inmueble'
+    if (isset($meta_values['tipo_inmueble']) && is_serialized($meta_values['tipo_inmueble'])) {
+        $meta_values['tipo_inmueble'] = maybe_unserialize($meta_values['tipo_inmueble']);
+    }
+
+    return $meta_values;
+}
+
 
 // Eliminar campos vacíos de un array
 function idealista_remove_empty_fields( $array ) {
