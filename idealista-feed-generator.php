@@ -2,6 +2,10 @@
 
 // Generar y enviar el feed de propiedades a Idealista
 function idealista_properties_feed_generate() {
+    // Verificar el nonce
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'idealista_properties_feed_generate')) {
+        wp_die(__('Nonce verification failed.', 'idealista-properties-feed'));
+    }
     // Obtener todas las entradas de tipo 'inmueble'
     $args = array(
         'post_type' => 'inmueble',
@@ -18,7 +22,7 @@ function idealista_properties_feed_generate() {
             'customerCountry' => "Spain",
             'customerCode' => sanitize_text_field( $form_values['code'] ),
             'customerReference' => sanitize_text_field( $form_values['reference'] ),
-            'customerSendDate' => date("Y/m/d H:i:s"),
+            'customerSendDate' => gmdate("Y/m/d H:i:s"),
             'customerContact' => array(
                 'contactName' => sanitize_text_field( $form_values['name'] ),
                 'contactEmail' => sanitize_email( $form_values['email'] ),
@@ -374,12 +378,12 @@ function idealista_properties_feed_generate() {
         // Convertir todos los datos a UTF-8
         $property_data = convert_to_utf8_recursively($property_data);
         // Convertir el array de propiedades a JSON
-        $json_data = json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $json_data =  wp_json_encode( $property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
         if ($json_data === false) {
              // Algo salió mal
-             $test = json_last_error_msg();
-             error_log("Error en la conversión JSON: " . $test);
-             wp_die("Error en la conversión JSON: " . $test);
+            $test = json_last_error_msg();
+            error_log("Error en la conversión JSON: " . $test);
+            wp_die("Error en la conversión JSON: " . $test);
         }
 
         // Guardar el archivo JSON en el servidor
@@ -388,7 +392,13 @@ function idealista_properties_feed_generate() {
 
         // Verificar el contenido del archivo antes de la transferencia
         $contents = file_get_contents($file_path);
-        error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
+
+        if ($contents === false) {
+            error_log("Error al obtener el contenido del archivo JSON: No se pudo leer el archivo.");
+            wp_die("Error al obtener el contenido del archivo JSON: No se pudo leer el archivo.");
+        } else {
+            error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
+        }
 
         // Subir el archivo JSON al servidor FTP
         $ftp_server = $form_values['ftp_server'];
@@ -424,7 +434,10 @@ function idealista_properties_feed_generate() {
 
                 // Subir el archivo al servidor FTP
                 if (ftp_put($ftp_conn, $file_name, $file_path, FTP_BINARY)) {
-                    _e("Successfully uploaded $file_name in binary mode.", "idealista-properties-feed");
+                    printf(
+                        // Translators: Placeholder %s will be replaced with the file name.
+                        esc_html__( "Successfully uploaded %s in binary mode.", 'idealista-properties-feed' ),  esc_html($file_name)
+                    );
                 } else {
                     $last_error = error_get_last();
                     error_log("Error al subir el archivo $file_name en modo binario.");
@@ -455,9 +468,16 @@ function idealista_properties_feed_generate() {
         }
 
         // Redirigir de vuelta a la página de configuración con un mensaje de éxito
-        $redirect_url = add_query_arg( 'feed_status', 'success', admin_url('admin.php?page=idealista-properties-feed' ) );
-        wp_safe_redirect( $redirect_url );
-        exit;
+        $redirect_url = add_query_arg(
+            array(
+                'page' => 'idealista-properties-feed',
+                'feed_status' => 'success',
+                '_wpnonce' => wp_create_nonce('idealista_store_customer_data')
+            ),
+            admin_url('admin.php')
+    );
+    wp_safe_redirect($redirect_url);
+    exit;
         
     }else{
         wp_die( __( 'No properties found.', 'idealista-properties-feed' ) );
