@@ -41,7 +41,7 @@ function idealista_save_form_values() {
     if ( isset( $_POST['action'] ) && $_POST['action'] === 'idealista_store_customer_data' ) {
         // Verificar el nonce
         if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'idealista_store_customer_data' ) ) {
-            wp_die( __( 'Nonce verification failed.', 'idealista-properties-feed' ) );
+            wp_die( esc_html__( 'Nonce verification failed.', 'idealista-properties-feed' ) );
         }
 
         // Guardar los valores del formulario en las opciones del plugin
@@ -90,7 +90,7 @@ function idealista_render_admin_page() {
     ?>
 
     <div class="wrap">
-        <h1><?php _e( 'Idealista Feed', 'idealista-properties-feed' ); ?></h1>
+        <h1><?php esc_attr__( 'Idealista Feed', 'idealista-properties-feed' ); ?></h1>
 
         <?php
         if ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'customer_data_saved' ) {
@@ -109,7 +109,7 @@ function idealista_render_admin_page() {
         }
         ?>
 
-        <form method="post" action="<?php echo admin_url( 'admin-post.php' ); ?>">
+        <form method="post" action="<?php echo  esc_url( admin_url( 'admin-post.php' ) ); ?>">
             <input type="hidden" name="action" value="idealista_store_customer_data">
             <?php wp_nonce_field( 'idealista_store_customer_data' ); ?>
 
@@ -117,7 +117,7 @@ function idealista_render_admin_page() {
 
                 <tr>
                     <th scope="row">
-                        <label for="code"><?php _e( 'Code:', 'idealista-properties-feed' ); ?></label>
+                        <label for="code"><?php echo esc_attr__( 'Code:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="text" name="code" id="code" class="regular-text" value="<?php echo esc_attr( $form_values['code'] ); ?>" required>
@@ -125,16 +125,16 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="reference"><?php _e( 'Reference:', 'idealista-properties-feed' ); ?></label>
+                        <label for="reference"><?php echo esc_attr__( 'Reference:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="text" name="reference" id="reference" class="regular-text" value="<?php echo esc_attr( $form_values['reference'] ); ?>" required>
                     </td>
                 </tr>
-                <p><?php _e( 'Idealista customer data.', 'idealista-properties-feed' ); ?></p>
+                <p><?php echo esc_attr__( 'Idealista customer data.', 'idealista-properties-feed' ); ?></p>
                 <tr>
                     <th scope="row">
-                        <label for="name"><?php _e( 'Contact Name:', 'idealista-properties-feed' ); ?></label>
+                        <label for="name"><?php echo esc_attr__( 'Contact Name:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="text" name="name" id="name" class="regular-text" value="<?php echo esc_attr( $form_values['name'] ); ?>" required>
@@ -142,7 +142,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="email"><?php _e( 'Email:', 'idealista-properties-feed' ); ?></label>
+                        <label for="email"><?php echo esc_attr__( 'Email:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="email" name="email" id="email" class="regular-text" value="<?php echo esc_attr( $form_values['email'] ); ?>" required>
@@ -150,7 +150,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="phone_1"><?php _e( 'Main Phone:', 'idealista-properties-feed' ); ?></label>
+                        <label for="phone_1"><?php echo esc_attr__( 'Main Phone:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="tel" name="phone_1" id="phone_1" class="regular-text" pattern="[0-9]+" value="<?php echo esc_attr( $form_values['phone_1'] ); ?>" required>
@@ -158,7 +158,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="phone_2"><?php _e( 'Second Phone:', 'idealista-properties-feed' ); ?></label>
+                        <label for="phone_2"><?php echo esc_attr__( 'Second Phone:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="tel" name="phone_2" id="phone_2" class="regular-text" pattern="[0-9]+" value="<?php echo esc_attr( $form_values['phone_2'] ); ?>" required>
@@ -166,7 +166,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="ftp_server"><?php _e( 'FTP Server:', 'idealista-properties-feed' ); ?></label>
+                        <label for="ftp_server"><?php echo esc_attr__( 'FTP Server:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="text" name="ftp_server" id="ftp_server" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_server'] ); ?>" required>
@@ -174,7 +174,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="ftp_user"><?php _e( 'FTP User:', 'idealista-properties-feed' ); ?></label>
+                        <label for="ftp_user"><?php echo esc_attr__( 'FTP User:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="text" name="ftp_user" id="ftp_user" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_user'] ); ?>" required>
@@ -182,7 +182,7 @@ function idealista_render_admin_page() {
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="ftp_pass"><?php _e( 'FTP Password:', 'idealista-properties-feed' ); ?></label>
+                        <label for="ftp_pass"><?php echo esc_attr__( 'FTP Password:', 'idealista-properties-feed' ); ?></label>
                     </th>
                     <td>
                         <input type="password" name="ftp_pass" id="ftp_pass" class="regular-text" value="<?php echo esc_attr( $form_values['ftp_pass'] ); ?>" required>
@@ -192,15 +192,16 @@ function idealista_render_admin_page() {
             </table>
         
             <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Store data', 'idealista-properties-feed' ); ?>">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo esc_attr__( 'Store data', 'idealista-properties-feed' ); ?>">
             </p>
         </form> 
 
-        <form method="post" action="<?php echo admin_url( 'admin-post.php' ); ?>">
+        <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+
             <input type="hidden" name="action" value="idealista_properties_feed_generate">
             <?php wp_nonce_field( 'idealista_properties_feed_generate' ); ?>
             <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Generate file & send', 'idealista-properties-feed' ); ?>">
+                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo esc_attr__( 'Generate file & send', 'idealista-properties-feed' ); ?>">
             </p>
         </form>
 
@@ -213,7 +214,7 @@ function idealista_render_admin_page() {
 function idealista_store_customer_data() {
     // Verificar el nonce
     if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'idealista_store_customer_data' ) ) {
-        wp_die( __( 'Nonce verification failed.', 'idealista-properties-feed' ) );
+        wp_die( esc_html__( 'Nonce verification failed.', 'idealista-properties-feed' ) );
     }
 
     // Los datos del cliente obtenidos en la página de configuración

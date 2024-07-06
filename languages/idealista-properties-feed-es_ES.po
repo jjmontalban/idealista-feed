@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Idealista Properties Feed 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/idealista-feed\n"
 "POT-Creation-Date: 2024-07-02T07:32:10+00:00\n"
-"PO-Revision-Date: 2024-07-02 09:41+0200\n"
+"PO-Revision-Date: 2024-07-06 11:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -56,8 +56,6 @@ msgid "Customer data successfully stored"
 msgstr "Datos del cliente almacenados satisfactoriamente"
 
 #: idealista-properties-feed.php:103
-#, fuzzy
-#| msgid "JSON file generated successfully"
 msgid "JSON file generated and sended successfully"
 msgstr "Archivo JSON generado satisfactoriamente"
 

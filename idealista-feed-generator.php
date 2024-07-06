@@ -18,7 +18,7 @@ function idealista_properties_feed_generate() {
             'customerCountry' => "Spain",
             'customerCode' => sanitize_text_field( $form_values['code'] ),
             'customerReference' => sanitize_text_field( $form_values['reference'] ),
-            'customerSendDate' => date("Y/m/d H:i:s"),
+            'customerSendDate' => gmdate("Y/m/d H:i:s"),
             'customerContact' => array(
                 'contactName' => sanitize_text_field( $form_values['name'] ),
                 'contactEmail' => sanitize_email( $form_values['email'] ),
@@ -374,21 +374,55 @@ function idealista_properties_feed_generate() {
         // Convertir todos los datos a UTF-8
         $property_data = convert_to_utf8_recursively($property_data);
         // Convertir el array de propiedades a JSON
-        $json_data = json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $json_data = wp_json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         if ($json_data === false) {
-             // Algo salió mal
-             $test = json_last_error_msg();
-             error_log("Error en la conversión JSON: " . $test);
-             wp_die("Error en la conversión JSON: " . $test);
+            // Algo salió mal
+            $test = json_last_error_msg();
+            error_log("Error en la conversión JSON" );
+            wp_die("Error en la conversión JSON" );
         }
 
         // Guardar el archivo JSON en el servidor
-        $file_path = plugin_dir_path( __FILE__ ) . $file_name;
-        file_put_contents( $file_path, $json_data );
+        // Cargar WP_Filesystem
+        if ( ! function_exists( 'WP_Filesystem' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
 
-        // Verificar el contenido del archivo antes de la transferencia
-        $contents = file_get_contents($file_path);
-        error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
+        // Acceso al sistema de archivos de WordPress
+        if ( WP_Filesystem() ) {
+            global $wp_filesystem;
+
+            // Ruta donde guardar el archivo
+            $file_path = plugin_dir_path( __FILE__ ) . $file_name;
+
+            // Escribir el contenido en el archivo usando WP_Filesystem
+            if ( $wp_filesystem->put_contents( $file_path, $json_data, FS_CHMOD_FILE ) ) {
+                error_log( "Archivo JSON guardado exitosamente en: " . $file_path );
+            } else {
+                error_log( "Error al guardar el archivo JSON en: " . $file_path );
+            }
+        } else {
+            error_log( "No se pudo obtener acceso al sistema de archivos de WordPress." );
+        }
+
+        // Realizar la solicitud remota
+        $response = wp_remote_get($file_path);
+
+        // Verificar si la solicitud fue exitosa
+        if (is_wp_error($response)) {
+            $error_message = $response->get_error_message();
+            error_log("Error al obtener el archivo remoto: " . $error_message);
+        } else {
+            // Obtener el contenido del archivo si la solicitud fue exitosa
+            $contents = wp_remote_retrieve_body($response);
+
+            // Verificar si el contenido es válido
+            if (!empty($contents)) {
+                error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
+            } else {
+                error_log("El archivo remoto está vacío o no se pudo obtener correctamente.");
+            }
+        }
 
         // Subir el archivo JSON al servidor FTP
         $ftp_server = $form_values['ftp_server'];
@@ -399,14 +433,14 @@ function idealista_properties_feed_generate() {
             // Conexión al servidor FTP
             $ftp_conn = ftp_connect($ftp_server);
             if (!$ftp_conn) {
-                error_log("No se pudo conectar al servidor FTP: $ftp_server");
-                wp_die("No se pudo conectar al servidor FTP: $ftp_server");
+                error_log("No se pudo conectar al servidor FTP");
+                wp_die("No se pudo conectar al servidor FTP");
             }
 
             $login = ftp_login($ftp_conn, $ftp_user, $ftp_pass);
             if (!$login) {
-                error_log("Error de inicio de sesión en el servidor FTP: $ftp_server con el usuario: $ftp_user");
-                wp_die("Error de inicio de sesión en el servidor FTP: $ftp_server con el usuario: $ftp_user");
+                error_log("Error de inicio de sesión en el servidor FTP con el usuario dado");
+                wp_die("Error de inicio de sesión en el servidor FTP con el usuario dado");
             }
 
             if ($login) {
@@ -418,16 +452,16 @@ function idealista_properties_feed_generate() {
                 if (ftp_chdir($ftp_conn, $remote_dir)) {
                     error_log("Directorio actual en el servidor FTP: " . ftp_pwd($ftp_conn));
                 } else {
-                    error_log("No se pudo cambiar al directorio: $remote_dir");
-                    wp_die("No se pudo cambiar al directorio: $remote_dir");
+                    error_log( "No se pudo cambiar al directorio: $remote_dir" );
+                    wp_die( "No se pudo cambiar al directorio" );
                 }
 
                 // Subir el archivo al servidor FTP
                 if (ftp_put($ftp_conn, $file_name, $file_path, FTP_BINARY)) {
-                    _e("Successfully uploaded $file_name in binary mode.", "idealista-properties-feed");
+                    esc_html_e( "File Successfully uploaded in binary mode.", "idealista-properties-feed" );
                 } else {
                     $last_error = error_get_last();
-                    error_log("Error al subir el archivo $file_name en modo binario.");
+                    error_log("Error al subir el archivo en modo binario.");
                     error_log("Detalles del último error de PHP: " . print_r($last_error, true));
 
                     // Intentar obtener más información del servidor FTP
@@ -441,7 +475,7 @@ function idealista_properties_feed_generate() {
                         error_log("Tipo de sistema del servidor FTP: " . $ftp_systype);
                     }
 
-                    wp_die("Error uploading $file_name. Detalles del error: " . print_r($last_error, true));
+                    wp_die( "Error uploading file" );
                 }
             }
 
@@ -460,7 +494,7 @@ function idealista_properties_feed_generate() {
         exit;
         
     }else{
-        wp_die( __( 'No properties found.', 'idealista-properties-feed' ) );
+        wp_die( esc_html__( 'No properties found.', 'idealista-properties-feed' ) );
     }
 
 }
