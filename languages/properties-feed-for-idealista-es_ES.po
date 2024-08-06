@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Idealista Properties Feed 1.0.0\n"
+"Project-Id-Version: Properties Feed for Idealista 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/idealista-feed\n"
 "POT-Creation-Date: 2024-07-02T07:32:10+00:00\n"
-"PO-Revision-Date: 2024-07-06 11:51+0200\n"
+"PO-Revision-Date: 2024-08-06 17:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -13,102 +13,93 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
-"X-Domain: idealista-properties-feed\n"
+"X-Domain: properties-feed-for-idealista\n"
 
 #. Plugin Name of the plugin
-msgid "Idealista Properties Feed"
+msgid "Properties Feed for Idealista"
 msgstr "Sincronización de Propiedades Idealista"
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 msgid "https://jjmontalban.github.io/"
-msgstr ""
+msgstr "https://jjmontalban.github.io/"
 
 #. Description of the plugin
-msgid ""
-"Idealista Properties Feed is a plugin that generates and sends a properties "
-"feed to Idealista. With this plugin, you can automate the process of sending "
-"your properties to Idealista, saving you time and effort."
-msgstr ""
-"Idealista Properties Feed es un plugin que genera y envía un feed de "
-"propiedades a Idealista. Con este complemento podrás automatizar el proceso "
-"de envío de tus propiedades a Idealista, ahorrándote tiempo y esfuerzo."
+msgid "Properties Feed for Idealista is a plugin that generates and sends a properties feed to Idealista. With this plugin, you can automate the process of sending your properties to Idealista, saving you time and effort."
+msgstr "Properties Feed for Idealista es un plugin que genera y envía un feed de propiedades a Idealista. Con este complemento podrás automatizar el proceso de envío de tus propiedades a Idealista, ahorrándote tiempo y esfuerzo."
 
 #. Author of the plugin
 msgid "JJMontalban"
-msgstr ""
+msgstr "JJMontalban"
 
 #: idealista-feed-generator.php:439
 msgid "No properties found."
 msgstr "No se encontraron propiedades."
 
-#: idealista-properties-feed.php:28 idealista-properties-feed.php:29
-#: idealista-properties-feed.php:93
+#: properties-feed-for-idealista.php:28 properties-feed-for-idealista.php:29 properties-feed-for-idealista.php:93
 msgid "Idealista Feed"
 msgstr "Sincronización Idealista"
 
-#: idealista-properties-feed.php:44 idealista-properties-feed.php:216
+#: properties-feed-for-idealista.php:44 properties-feed-for-idealista.php:216
 msgid "Nonce verification failed."
 msgstr "Verificación nonce fallida."
 
-#: idealista-properties-feed.php:97
+#: properties-feed-for-idealista.php:97
 msgid "Customer data successfully stored"
 msgstr "Datos del cliente almacenados satisfactoriamente"
 
-#: idealista-properties-feed.php:103
+#: properties-feed-for-idealista.php:103
 msgid "JSON file generated and sended successfully"
 msgstr "Archivo JSON generado satisfactoriamente"
 
-#: idealista-properties-feed.php:107
+#: properties-feed-for-idealista.php:107
 msgid "The JSON file was generated but not sent due to missing FTP settings."
-msgstr ""
-"El archivo fue generado pero no fue enviado debido a problemas en al "
-"configuración FTP."
+msgstr "El archivo fue generado pero no fue enviado debido a problemas en al configuración FTP."
 
-#: idealista-properties-feed.php:120
+#: properties-feed-for-idealista.php:120
 msgid "Code:"
 msgstr "Código:"
 
-#: idealista-properties-feed.php:128
+#: properties-feed-for-idealista.php:128
 msgid "Reference:"
 msgstr "Referencia:"
 
-#: idealista-properties-feed.php:134
+#: properties-feed-for-idealista.php:134
 msgid "Idealista customer data."
 msgstr "Datos de cliente Idealista."
 
-#: idealista-properties-feed.php:137
+#: properties-feed-for-idealista.php:137
 msgid "Contact Name:"
 msgstr "Nombre de contacto:"
 
-#: idealista-properties-feed.php:145
+#: properties-feed-for-idealista.php:145
 msgid "Email:"
 msgstr "Email:"
 
-#: idealista-properties-feed.php:153
+#: properties-feed-for-idealista.php:153
 msgid "Main Phone:"
 msgstr "Teléfono principal:"
 
-#: idealista-properties-feed.php:161
+#: properties-feed-for-idealista.php:161
 msgid "Second Phone:"
 msgstr "Teléfono secundario:"
 
-#: idealista-properties-feed.php:169
+#: properties-feed-for-idealista.php:169
 msgid "FTP Server:"
 msgstr "Servidor FTP:"
 
-#: idealista-properties-feed.php:177
+#: properties-feed-for-idealista.php:177
 msgid "FTP User:"
 msgstr "Usuario FTP:"
 
-#: idealista-properties-feed.php:185
+#: properties-feed-for-idealista.php:185
 msgid "FTP Password:"
 msgstr "Contraseña FTP:"
 
-#: idealista-properties-feed.php:195
+#: properties-feed-for-idealista.php:195
 msgid "Store data"
 msgstr "Guardar datos"
 
-#: idealista-properties-feed.php:203
+#: properties-feed-for-idealista.php:203
 msgid "Generate file & send"
 msgstr "Generar archivo y enviar"

@@ -1,7 +1,7 @@
 <?php
 
 // Generar y enviar el feed de propiedades a Idealista
-function idealista_properties_feed_generate() {
+function pffi_properties_feed_generate() {
     // Obtener todas las entradas de tipo 'inmueble'
     $args = array(
         'post_type' => 'inmueble',
@@ -13,7 +13,7 @@ function idealista_properties_feed_generate() {
     // Verificar si se encontraron entradas
     if ($query->have_posts()) {
         // Recuperar los datos del cliente
-        $form_values = get_option( 'idealista_customer_data', array() );
+        $form_values = get_option( 'pffi_customer_data', array() );
         $property_data = array(
             'customerCountry' => "Spain",
             'customerCode' => sanitize_text_field( $form_values['code'] ),
@@ -193,9 +193,9 @@ function idealista_properties_feed_generate() {
                         'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
                         'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
                     );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_heating_type($inmueble_data['calefaccion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_orientation($inmueble_data['orientacion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
                     break;
 
                 case 'casa_chalet':
@@ -239,9 +239,9 @@ function idealista_properties_feed_generate() {
                         'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
                         'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
                     );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_heating_type($inmueble_data['calefaccion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_orientation($inmueble_data['orientacion']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
 
                     break;
 
@@ -321,7 +321,7 @@ function idealista_properties_feed_generate() {
                     );
                     
                     $property['propertyFeatures']['featuresUbication'] = $ubication_map[$inmueble_data['ubicacion_local']] ?? 'unknown';
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
                     break;
 
                 case 'oficina':
@@ -338,31 +338,31 @@ function idealista_properties_feed_generate() {
                         'featuresParkingSpacesNumber' => intval( $inmueble_data['num_plazas'] ),
                         'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,                        
                     );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_orientation($inmueble_data['orientacion']));
-                    $property['propertyFeatures']['featuresRoomsSplitted'] = idealista_map_room_splitted($inmueble_data['distribucion_oficina']);
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_ac($inmueble_data['aire_acond']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
+                    $property['propertyFeatures']['featuresRoomsSplitted'] = pffi_map_room_splitted($inmueble_data['distribucion_oficina']);
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_ac($inmueble_data['aire_acond']));
                     break;
 
                 case 'garaje':
                     $property['propertyFeatures'] = array(
                         'featuresType' => 'garage',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_plaza'] ),
-                        'featuresGarageCapacityType' => idealista_map_garage_type($inmueble_data['tipo_plaza']),
+                        'featuresGarageCapacityType' => pffi_map_garage_type($inmueble_data['tipo_plaza']),
                         'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], idealista_map_garage_features($inmueble_data['caract_garaje']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_garage_features($inmueble_data['caract_garaje']));
                     break;
 
                 case 'terreno':
                     $property['propertyFeatures'] = array(
-                        'featuresType' => idealista_map_terray_type($inmueble_data['tipo_terreno']),
+                        'featuresType' => pffi_map_terray_type($inmueble_data['tipo_terreno']),
                         'featuresAreaPlot' => max(1, intval($inmueble_data['superf_terreno'])),
                         'featuresUtilitiesRoadAccess' => $inmueble_data['acceso_rodado'] === 'si_tiene' ? true : false,
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null) + idealista_map_terrain_class($inmueble_data['calif_terreno']);
+                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null) + pffi_map_terrain_class($inmueble_data['calif_terreno']);
                     break;
             }
             
             //vaciar campos nulos
-            $property = idealista_remove_empty_fields($property);
+            $property = pffi_remove_empty_fields($property);
             // Agregar la propiedad al array 'customerProperties'
             $property_data['customerProperties'][] = $property;
             // Restaurar datos originales de la consulta de WordPress
@@ -458,7 +458,7 @@ function idealista_properties_feed_generate() {
 
                 // Subir el archivo al servidor FTP
                 if (ftp_put($ftp_conn, $file_name, $file_path, FTP_BINARY)) {
-                    esc_html_e( "File Successfully uploaded in binary mode.", "idealista-properties-feed" );
+                    esc_html_e( "File Successfully uploaded in binary mode.", "properties-feed-for-idealista" );
                 } else {
                     $last_error = error_get_last();
                     error_log("Error al subir el archivo en modo binario.");
@@ -483,22 +483,22 @@ function idealista_properties_feed_generate() {
         }
         else {
             // Mostrar un mensaje de error porque faltan datos de conexión FTP
-            $redirect_url = add_query_arg( 'feed_status', 'ftp_missing', admin_url('admin.php?page=idealista-properties-feed' ) );
+            $redirect_url = add_query_arg( 'feed_status', 'ftp_missing', admin_url('admin.php?page=properties-feed-for-idealista' ) );
             wp_safe_redirect( $redirect_url );
             exit;
         }
 
         // Redirigir de vuelta a la página de configuración con un mensaje de éxito
-        $redirect_url = add_query_arg( 'feed_status', 'success', admin_url('admin.php?page=idealista-properties-feed' ) );
+        $redirect_url = add_query_arg( 'feed_status', 'success', admin_url('admin.php?page=properties-feed-for-idealista' ) );
         wp_safe_redirect( $redirect_url );
         exit;
         
     }else{
-        wp_die( esc_html__( 'No properties found.', 'idealista-properties-feed' ) );
+        wp_die( esc_html__( 'No properties found.', 'properties-feed-for-idealista' ) );
     }
 
 }
-add_action( 'admin_post_idealista_properties_feed_generate', 'idealista_properties_feed_generate' );
+add_action( 'admin_post_pffi_properties_feed_generate', 'pffi_properties_feed_generate' );
 
 /**
  * Obtiene todos los campos personalizados del inmueble.
@@ -523,10 +523,10 @@ function obtener_campos_inmueble_feed($post_id) {
 
 
 // Eliminar campos vacíos de un array
-function idealista_remove_empty_fields( $array ) {
+function pffi_remove_empty_fields( $array ) {
     foreach ( $array as $key => $value ) {
         if ( is_array( $value ) ) {
-            $array[$key] = idealista_remove_empty_fields( $value );
+            $array[$key] = pffi_remove_empty_fields( $value );
         }
         if ( $array[$key] === null || $array[$key] === '' ) {
             unset( $array[$key] );
@@ -536,7 +536,7 @@ function idealista_remove_empty_fields( $array ) {
 }
 
 // Mapear el tipo de calefacción
-function idealista_map_terray_type($tipo_terreno) {
+function pffi_map_terray_type($tipo_terreno) {
     switch ($tipo_terreno) {
         case 'urbanizable':
             return 'land_countrybuildable';
@@ -550,7 +550,7 @@ function idealista_map_terray_type($tipo_terreno) {
 }
 
 // Mapear el tipo de garaje
-function idealista_map_terrain_class($calif_terreno) {
+function pffi_map_terrain_class($calif_terreno) {
     $classification = [
         'featuresClassificationBlocks' => false,
         'featuresClassificationBlocks' => false,
@@ -594,7 +594,7 @@ function idealista_map_terrain_class($calif_terreno) {
 }
 
 // Mapear el tipo de calefacción
-function idealista_map_ac($airConditioning) {
+function pffi_map_ac($airConditioning) {
     $conditionedAirType = '';
     $conditionedAir = false;
     $heating = false;
@@ -626,7 +626,7 @@ function idealista_map_ac($airConditioning) {
 }
 
 // Mapear la distribución de las habitaciones
-function idealista_map_room_splitted($room_splitted) {
+function pffi_map_room_splitted($room_splitted) {
     $value_mapped = 'unknown';
 
     switch ($room_splitted) {
@@ -645,7 +645,7 @@ function idealista_map_room_splitted($room_splitted) {
 }
 
 // Mapear la orientación
-function idealista_map_orientation($idealista_map_orientation_array) {
+function pffi_map_orientation($pffi_map_orientation_array) {
     $mapped_orientation = array(
         'featuresOrientationNorth' => false,
         'featuresOrientationSouth' => false,
@@ -653,7 +653,7 @@ function idealista_map_orientation($idealista_map_orientation_array) {
         'featuresOrientationWest' => false,
     );
 
-    foreach ($idealista_map_orientation_array as $orientation) {
+    foreach ($pffi_map_orientation_array as $orientation) {
         switch ($orientation) {
             case 'norte':
                 $mapped_orientation['featuresOrientationNorth'] = true;
@@ -674,11 +674,11 @@ function idealista_map_orientation($idealista_map_orientation_array) {
 }
 
 // Mapear los campos de energía
-function idealista_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emisiones) {
+function pffi_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emisiones) {
     $mapped_energy_fields = array(
         'featuresEnergyCertificatePerformance' => max( 0, floatval($consumo) ),
-        'featuresEnergyCertificateRating' => idealista_map_energy_certificate_rating($calif_consumo),
-        'featuresEnergyCertificateEmissionsRating' => idealista_map_energy_certificate_emissions_rating($calif_emis),
+        'featuresEnergyCertificateRating' => pffi_map_energy_certificate_rating($calif_consumo),
+        'featuresEnergyCertificateEmissionsRating' => pffi_map_energy_certificate_emissions_rating($calif_emis),
         'featuresEnergyCertificateEmissionsValue' => max( 0, floatval( $emisiones ) ),
     );
 
@@ -691,7 +691,7 @@ function idealista_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emi
 }
 
 // Mapear la calificación del certificado energético
-function idealista_map_energy_certificate_rating($rating) {
+function pffi_map_energy_certificate_rating($rating) {
     $rating = strtolower($rating);
 
     $allowed_values = array("a", "a+", "a1", "a2", "a3", "a4", "b", "b-", "c", "d", "e", "f", "g");
@@ -711,7 +711,7 @@ function idealista_map_energy_certificate_rating($rating) {
 }
 
 // Mapear la calificación de emisiones del certificado energético
-function idealista_map_energy_certificate_emissions_rating($rating) {
+function pffi_map_energy_certificate_emissions_rating($rating) {
     $allowed_values = array("A", "B", "C", "D", "E", "F", "G");
 
     if (in_array($rating, $allowed_values)) {
@@ -722,7 +722,7 @@ function idealista_map_energy_certificate_emissions_rating($rating) {
 }
 
 // Mapear el tipo de garaje
-function idealista_map_garage_type($tipo_plaza) {
+function pffi_map_garage_type($tipo_plaza) {
     switch ($tipo_plaza) {
         case 'coche_peq':
             return 'car_compact';
@@ -740,7 +740,7 @@ function idealista_map_garage_type($tipo_plaza) {
 }
 
 // Mapear las características del garaje
-function idealista_map_garage_features($caract_garaje) {
+function pffi_map_garage_features($caract_garaje) {
     return array(
         'featuresLiftAvailable' => (bool) in_array('ascensor_garaje', $caract_garaje),
         'featuresParkingAutomaticDoor' => in_array('puerta_auto', $caract_garaje),
@@ -751,7 +751,7 @@ function idealista_map_garage_features($caract_garaje) {
 }
 
 // Mapear el tipo de calefacción
-function idealista_heating_type($calefaccion) {
+function pffi_heating_type($calefaccion) {
     switch ($calefaccion) {
         case 'individual':
             return array('featuresHeatingType' => 'individualGas');
