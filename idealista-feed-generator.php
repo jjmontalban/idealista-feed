@@ -2,6 +2,10 @@
 
 // Generar y enviar el feed de propiedades a Idealista
 function idealista_properties_feed_generate() {
+    // Verificar el nonce
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'idealista_properties_feed_generate')) {
+        wp_die(__('Nonce verification failed.', 'idealista-properties-feed'));
+    }
     // Obtener todas las entradas de tipo 'inmueble'
     $args = array(
         'post_type' => 'inmueble',
@@ -18,7 +22,7 @@ function idealista_properties_feed_generate() {
             'customerCountry' => "Spain",
             'customerCode' => sanitize_text_field( $form_values['code'] ),
             'customerReference' => sanitize_text_field( $form_values['reference'] ),
-            'customerSendDate' => gmdate("Y/m/d H:i:s"),
+            'customerSendDate' => gmgmdate("Y/m/d H:i:s"),
             'customerContact' => array(
                 'contactName' => sanitize_text_field( $form_values['name'] ),
                 'contactEmail' => sanitize_email( $form_values['email'] ),
@@ -375,54 +379,26 @@ function idealista_properties_feed_generate() {
         // Convertir todos los datos a UTF-8
         $property_data = convert_to_utf8_recursively($property_data);
         // Convertir el array de propiedades a JSON
-        $json_data = wp_json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $json_data =  wp_json_encode( $property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
         if ($json_data === false) {
-            // Algo salió mal
+             // Algo salió mal
             $test = json_last_error_msg();
-            error_log("Error en la conversión JSON" );
-            wp_die("Error en la conversión JSON" );
+            error_log("Error en la conversión JSON: " . $test);
+            wp_die("Error en la conversión JSON: " . $test);
         }
 
         // Guardar el archivo JSON en el servidor
-        // Cargar WP_Filesystem
-        if ( ! function_exists( 'WP_Filesystem' ) ) {
-            require_once ABSPATH . 'wp-admin/includes/file.php';
-        }
+        $file_path = plugin_dir_path( __FILE__ ) . $file_name;
+        file_put_contents( $file_path, $json_data );
 
-        // Acceso al sistema de archivos de WordPress
-        if ( WP_Filesystem() ) {
-            global $wp_filesystem;
+        // Verificar el contenido del archivo antes de la transferencia
+        $contents = file_get_contents($file_path);
 
-            // Ruta donde guardar el archivo
-            $file_path = plugin_dir_path( __FILE__ ) . $file_name;
-
-            // Escribir el contenido en el archivo usando WP_Filesystem
-            if ( $wp_filesystem->put_contents( $file_path, $json_data, FS_CHMOD_FILE ) ) {
-                error_log( "Archivo JSON guardado exitosamente en: " . $file_path );
-            } else {
-                error_log( "Error al guardar el archivo JSON en: " . $file_path );
-            }
+        if ($contents === false) {
+            error_log("Error al obtener el contenido del archivo JSON: No se pudo leer el archivo.");
+            wp_die("Error al obtener el contenido del archivo JSON: No se pudo leer el archivo.");
         } else {
-            error_log( "No se pudo obtener acceso al sistema de archivos de WordPress." );
-        }
-
-        // Realizar la solicitud remota
-        $response = wp_remote_get($file_path);
-
-        // Verificar si la solicitud fue exitosa
-        if (is_wp_error($response)) {
-            $error_message = $response->get_error_message();
-            error_log("Error al obtener el archivo remoto: " . $error_message);
-        } else {
-            // Obtener el contenido del archivo si la solicitud fue exitosa
-            $contents = wp_remote_retrieve_body($response);
-
-            // Verificar si el contenido es válido
-            if (!empty($contents)) {
-                error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
-            } else {
-                error_log("El archivo remoto está vacío o no se pudo obtener correctamente.");
-            }
+            error_log("Contenido del archivo JSON antes de la transferencia: " . $contents);
         }
 
         // Subir el archivo JSON al servidor FTP
@@ -459,7 +435,10 @@ function idealista_properties_feed_generate() {
 
                 // Subir el archivo al servidor FTP
                 if (ftp_put($ftp_conn, $file_name, $file_path, FTP_BINARY)) {
-                    esc_html_e( "File Successfully uploaded in binary mode.", "idealista-properties-feed" );
+                    printf(
+                        // Translators: Placeholder %s will be replaced with the file name.
+                        esc_html__( "Successfully uploaded %s in binary mode.", 'idealista-properties-feed' ),  esc_html($file_name)
+                    );
                 } else {
                     $last_error = error_get_last();
                     error_log("Error al subir el archivo en modo binario.");
@@ -490,9 +469,16 @@ function idealista_properties_feed_generate() {
         }
 
         // Redirigir de vuelta a la página de configuración con un mensaje de éxito
-        $redirect_url = add_query_arg( 'feed_status', 'success', admin_url('admin.php?page=idealista-properties-feed' ) );
-        wp_safe_redirect( $redirect_url );
-        exit;
+        $redirect_url = add_query_arg(
+            array(
+                'page' => 'idealista-properties-feed',
+                'feed_status' => 'success',
+                '_wpnonce' => wp_create_nonce('idealista_store_customer_data')
+            ),
+            admin_url('admin.php')
+    );
+    wp_safe_redirect($redirect_url);
+    exit;
         
     }else{
         wp_die( esc_html__( 'No properties found.', 'idealista-properties-feed' ) );
