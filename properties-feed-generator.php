@@ -1,5 +1,10 @@
 <?php
 
+// Evitar acceso directo al archivo
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
 // Generar y enviar el feed de propiedades a Idealista
 function pffi_properties_feed_generate() {
     // Obtener todas las entradas de tipo 'inmueble'
@@ -15,17 +20,17 @@ function pffi_properties_feed_generate() {
         // Recuperar los datos del cliente
         $form_values = get_option( 'pffi_customer_data', array() );
         $property_data = array(
-            'customerCountry' => "Spain",
+            'customerCountry' => 'Spain',
             'customerCode' => sanitize_text_field( $form_values['code'] ),
             'customerReference' => sanitize_text_field( $form_values['reference'] ),
-            'customerSendDate' => gmdate("Y/m/d H:i:s"),
+            'customerSendDate' => gmdate('Y/m/d H:i:s'),
             'customerContact' => array(
                 'contactName' => sanitize_text_field( $form_values['name'] ),
                 'contactEmail' => sanitize_email( $form_values['email'] ),
-                'contactPrimaryPhonePrefix' => "34",
+                'contactPrimaryPhonePrefix' => '34',
                 'contactPrimaryPhoneNumber' => sanitize_text_field( $form_values['phone_1'] ),
-                'contactSecondaryPhonePrefix' => "34",
-                'contactSecondaryPhoneNumber' => sanitize_text_field( $form_values['phone_2'] )
+                'contactSecondaryPhonePrefix' => '34',
+                'contactSecondaryPhoneNumber' => sanitize_text_field( $form_values['phone_2'] ),
             ),
             'customerProperties' => array()
         );
@@ -35,7 +40,8 @@ function pffi_properties_feed_generate() {
             $query->the_post();
             // Obtener los datos del inmueble
             $post_id = get_the_ID();
-            $inmueble_data = obtener_campos_inmueble_feed($post_id);
+            $inmueble_data = pffi_obtener_campos_inmueble_feed($post_id);
+
             // Visibilidad direccion
             $address_visibility_options = array(
                 'direccion_exacta' => 'full',
@@ -44,6 +50,7 @@ function pffi_properties_feed_generate() {
             );
             $selected_visibility = $inmueble_data['visibilidad_direccion'];
             $address_visibility = isset($address_visibility_options[$selected_visibility]) ? $address_visibility_options[$selected_visibility] : 'hidden';
+
             // Coordenadas
             $coordenadas = get_post_meta( $post_id, 'campo_mapa', true );
             if ($coordenadas) {
@@ -53,17 +60,18 @@ function pffi_properties_feed_generate() {
             } else {
                 $latitud = 36.7372; // Latitud de Chipiona
                 $longitud = -6.4419; // Longitud de Chipiona
-            }     
+            }
+
             $address_coordinates_precision_options = array(
                 'full' => 'exact',
                 'street' => 'moved',
                 'hidden' => 'moved'
             );
             $address_coordinates_precision = isset($address_coordinates_precision_options[$address_visibility]) ? $address_coordinates_precision_options[$address_visibility] : 'moved';
+
             // Mapear la planta
-            $planta = $inmueble_data['planta'];
-            $planta = strtolower($planta);
-            $map = [
+            $planta = strtolower($inmueble_data['planta']);
+            $map = array(
                 'sótano' => 'st',
                 'bajo' => 'bj',
                 '1' => '1',
@@ -73,8 +81,9 @@ function pffi_properties_feed_generate() {
                 '5' => '5',
                 '6' => '6',
                 '7' => '7',
-                '8' => '8',
-            ];
+                '8' => '8'
+            );
+
             // Construir el array de datos de la propiedad según el formato de Idealista
             $property = array(
                 'propertyCode' => isset($inmueble_data['codigo']) ? strval($inmueble_data['codigo']) : '',
@@ -83,27 +92,28 @@ function pffi_properties_feed_generate() {
                 'propertyOperation' => array(
                     'operationType' => ($inmueble_data['tipo_operacion'] === 'venta') ? 'sale' : 'rent',
                     'operationPrice' => ($inmueble_data['tipo_operacion'] === 'venta') ? floatval( $inmueble_data['precio_venta'] ) : floatval( $inmueble_data['precio_alquiler'] ),
-                    'operationPriceCommunity' => isset($inmueble_data['gastos_comunidad']) && $inmueble_data['gastos_comunidad'] >= 1 ? floatval($inmueble_data['gastos_comunidad']) : null ),
+                    'operationPriceCommunity' => isset($inmueble_data['gastos_comunidad']) && $inmueble_data['gastos_comunidad'] >= 1 ? floatval($inmueble_data['gastos_comunidad']) : null,
+                ),
                 'propertyContact' => array(
-                    'contactName' => $form_values['name'],
-                    'contactEmail' => $form_values['email'],
+                    'contactName' => sanitize_text_field( $form_values['name'] ),
+                    'contactEmail' => sanitize_email( $form_values['email'] ),
                     'contactPrimaryPhonePrefix' => '34',
-                    'contactPrimaryPhoneNumber' => $form_values['phone_1'],
+                    'contactPrimaryPhoneNumber' => sanitize_text_field( $form_values['phone_1'] ),
                     'contactSecondaryPhonePrefix' => '34',
-                    'contactSecondaryPhoneNumber' => $form_values['phone_2'],
+                    'contactSecondaryPhoneNumber' => sanitize_text_field( $form_values['phone_2'] ),
                 ),
                 'propertyAddress' => array(
                     'addressVisibility' => $address_visibility,
-                    'addressStreetName' => $inmueble_data['nombre_calle'],
-                    'addressStreetNumber' => isset($inmueble_data['numero']) ? $inmueble_data['numero'] : '1',
-                    "addressBlock" => isset($inmueble_data['bloque']) ? $inmueble_data['bloque'] : '',
+                    'addressStreetName' => sanitize_text_field( $inmueble_data['nombre_calle'] ),
+                    'addressStreetNumber' => isset($inmueble_data['numero']) ? sanitize_text_field( $inmueble_data['numero'] ) : '1',
+                    'addressBlock' => isset($inmueble_data['bloque']) ? sanitize_text_field( $inmueble_data['bloque'] ) : '',
                     'addressFloor' => isset($map[$planta]) ? $map[$planta] : null,
-                    "addressStair" => isset($inmueble_data['escalera']) ? $inmueble_data['escalera'] : '',
-                    "addressDoor" => isset($inmueble_data['escalera']) ? $inmueble_data['escalera'] : '',
-                    'addressUrbanization' => isset($inmueble_data['urbanizacion']) ? $inmueble_data['urbanizacion'] : '',
-                    'addressPostalCode' => isset($inmueble_data['cod_postal']) ? $inmueble_data['cod_postal'] : '11550', 
-                    'addressTown' => isset($inmueble_data['localidad']) ? $inmueble_data['localidad'] : 'Chipiona',
-                    'addressCountry' => isset($inmueble_data['pais']) ? $inmueble_data['pais'] : 'Spain',
+                    'addressStair' => isset($inmueble_data['escalera']) ? sanitize_text_field( $inmueble_data['escalera'] ) : '',
+                    'addressDoor' => isset($inmueble_data['escalera']) ? sanitize_text_field( $inmueble_data['escalera'] ) : '',
+                    'addressUrbanization' => isset($inmueble_data['urbanizacion']) ? sanitize_text_field( $inmueble_data['urbanizacion'] ) : '',
+                    'addressPostalCode' => isset($inmueble_data['cod_postal']) ? sanitize_text_field( $inmueble_data['cod_postal'] ) : '11550',
+                    'addressTown' => isset($inmueble_data['localidad']) ? sanitize_text_field( $inmueble_data['localidad'] ) : 'Chipiona',
+                    'addressCountry' => isset($inmueble_data['pais']) ? sanitize_text_field( $inmueble_data['pais'] ) : 'Spain',
                     'addressCoordinatesLatitude' => $latitud,
                     'addressCoordinatesLongitude' => $longitud,
                     'addressCoordinatesPrecision' => $address_coordinates_precision,
@@ -112,21 +122,21 @@ function pffi_properties_feed_generate() {
                 'propertyDescriptions' => array(
                     array(
                         'descriptionLanguage' => 'spanish',
-                        'descriptionText' => substr($inmueble_data['descripcion'], 0, 4000) 
+                        'descriptionText' => sanitize_text_field( substr($inmueble_data['descripcion'], 0, 4000) )
                     )
                 ),
                 'propertyImages' => array_merge(
                     array_map(function($index, $image) {
                         return array(
                             'imageOrder' => $index + 1,
-                            'imageUrl' => $image
+                            'imageUrl' => esc_url($image)
                         );
                     }, array_keys($inmueble_data['galeria_imagenes'] ?? []), $inmueble_data['galeria_imagenes'] ?? []),
                     array_filter(
                         array_map(function($index, $image) use ($inmueble_data) {
                             return array(
                                 'imageOrder' => count($inmueble_data['galeria_imagenes'] ?? []) + $index + 1,
-                                'imageUrl' => $image,
+                                'imageUrl' => esc_url($image),
                                 'imageLabel' => 'plan'
                             );
                         }, array_keys(array_filter([
@@ -145,7 +155,7 @@ function pffi_properties_feed_generate() {
                         }
                     )
                 ),
-                'propertyUrl' => get_permalink($post_id),
+                'propertyUrl' => esc_url(get_permalink($post_id)),
             );
 
             // Verificar si los campos especiales código y referencia están vacíos
@@ -158,7 +168,7 @@ function pffi_properties_feed_generate() {
                 $property['propertyVideos'] = array(
                     array(
                         'videoOrder' => 1,
-                        'videoUrl' => $inmueble_data['video_embed']
+                        'videoUrl' => esc_url($inmueble_data['video_embed'])
                     )
                 );
             }
@@ -169,196 +179,193 @@ function pffi_properties_feed_generate() {
                     $property['propertyFeatures'] = array(
                         'featuresType' => 'flat',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_utiles'])),                        
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela'])),                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
-                        'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
-                        'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
-                        'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        
-                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
-                        'featuresLiftAvailable' => $inmueble_data['ascensor'] == 'si' ? true : false,
-                        'featuresWindowsLocation' => $inmueble_data['int_ext'],
-                        
-                        'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
-                        'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
-                        'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
-                        'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
-                        'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
-                        'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
-                        'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
-                        'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
-                        'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
-                        
-                        'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
-                        'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
-                        'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
-                    );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
-                    break;
-
-                case 'casa_chalet':
-                    $tipologia_chalet = $campos['tipologia_chalet'] ?? '';
-                    switch ($tipologia_chalet) {
-                        case 'adosado':
-                            $featuresType = 'house_terraced';
-                            break;
-                        case 'pareado':
-                            $featuresType = 'house_semidetached';
-                            break;
-                        case 'independiente':
-                            $featuresType = 'house_independent';
-                            break;
-                        default:
-                            $featuresType = 'house';
-                            break;
-                    }
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => $featuresType,
-                        'featuresAreaConstructed' => intval( $inmueble_data['m_utiles'] ),
-                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_construidos'])),
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela'])),
-                        'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,
-                        'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
-                        'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
-                        'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
-
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
-                        'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
-                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
-                        'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-
-                        'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
-                        'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
-                        'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
-                        'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
-                        'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
-                        'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
-                        'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
-                        'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
-                        'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
-                    );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
-
-                    break;
-
-                case 'casa_rustica':
-                    $tipo_rustica = $campos['tipo_rustica'] ?? '';
-                    switch ($tipo_rustica) {
-                        case 'finca':
-                            $featuresType = 'rustic_terrera';
-                            break;
-                        case 'castillo':
-                            $featuresType = 'rustic_torre';
-                            break;
-                        case 'casa_rural':
-                            $featuresType = 'rustic_rural';
-                            break;
-                        case 'casa_pueblo':
-                            $featuresType = 'rustic_caseron';
-                            break;
-                        case 'cortijo':
-                            $featuresType = 'rustic_cortijo';
-                            break;
-                        default:
-                            $featuresType = 'rustic_house';
-                            break;
-                    }
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => $featuresType,
-                        'featuresAreaConstructed' => intval( $inmueble_data['m_utiles'] ),
-                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_construidos'])),
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela'])),                      
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
-                        'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
-                        'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
-                        'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,                        
-                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
-                        'featuresWindowsLocation' => $inmueble_data['int_ext'],
-                        'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
-                        'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
-                        'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
-                        'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
-                        'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
-                        'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
-                        'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
-                        'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
-                        'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
-                        
-                        'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
-                        'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
-                        'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
-                    );
-                    break;
-
-                case 'local':
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => 'premises',
-                        'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                        'featuresFacadeArea' => max(1, intval($inmueble_data['m_lineales']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_lineales'])),                        
-                        'featuresRooms' => intval( $inmueble_data['num_estancias'] ),
-                        'featuresFloorsProperty' => intval( $inmueble_data['num_plantas'] ),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,                        
-                        'featuresEquippedKitchen' => in_array('cocina_equipada', $inmueble_data['caract_local']),
-                        'featuresHeating' => in_array('calefaccion', $inmueble_data['caract_local']),
-                        'featuresSecurityAlarm' => in_array('alarma', $inmueble_data['caract_local']),
-                        'featuresLocatedAtCorner' => in_array('esquina', $inmueble_data['caract_local']),
-                        'featuresSecurityDoor' => in_array('puerta_seguridad', $inmueble_data['caract_local']),
-                        'featuresStorage' => in_array('almacen', $inmueble_data['caract_local']),
-                        'featuresSecuritySystem' => in_array('circuito', $inmueble_data['caract_local']),
-                        'featuresSmokeExtraction' => in_array('humos', $inmueble_data['caract_local']),
-
-                    );
-                    $ubication_map = array(
-                        'pie_calle' => 'street',
-                        'centro_com' => 'shopping',
-                        'entreplanta' => 'mezzanine',
-                        'subterraneo' => 'belowGround',
-                    );
-                    
-                    $property['propertyFeatures']['featuresUbication'] = $ubication_map[$inmueble_data['ubicacion_local']] ?? 'unknown';
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
-                    break;
-
-                case 'oficina':
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => 'office',
-                        'featuresFloorsProperty' => intval( $inmueble_data['planta'] ),
-                        'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
-                        'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                        'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
-                        'featuresWindowsLocation' => isset($inmueble_data['int_ext']) ? $inmueble_data['int_ext'] : '',
+                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_utiles'])),
+                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela'])),
                         'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela'])),                        
-                        'featuresLiftNumber' => intval( $inmueble_data['num_ascensores'] ),
-                        'featuresParkingSpacesNumber' => intval( $inmueble_data['num_plazas'] ),
-                        'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,                        
+                        'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
+                        'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
+                        'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
+                        'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,
+                        'featuresConservation' => ($inmueble_data['campo_estado_cons'] == 'buen_estado') ? 'good' : (($inmueble_data['campo_estado_cons'] == 'a_reformar') ? 'toRestore' : ''),
+                        'featuresLiftAvailable' => ($inmueble_data['ascensor'] == 'si') ? true : false,
+                        'featuresWindowsLocation' => sanitize_text_field($inmueble_data['int_ext']),
+                        'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
+                        'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
+                        'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
+                        'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
+                        'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
+                        'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
+                        'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
+                        'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
+                        'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
+                        'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
+                        'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
+                        'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
                     );
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
                     $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
-                    $property['propertyFeatures']['featuresRoomsSplitted'] = pffi_map_room_splitted($inmueble_data['distribucion_oficina']);
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_ac($inmueble_data['aire_acond']));
+                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
                     break;
 
-                case 'garaje':
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => 'garage',
-                        'featuresAreaConstructed' => intval( $inmueble_data['m_plaza'] ),
-                        'featuresGarageCapacityType' => pffi_map_garage_type($inmueble_data['tipo_plaza']),
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null );
-                    $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_garage_features($inmueble_data['caract_garaje']));
-                    break;
-
-                case 'terreno':
-                    $property['propertyFeatures'] = array(
-                        'featuresType' => pffi_map_terray_type($inmueble_data['tipo_terreno']),
-                        'featuresAreaPlot' => max(1, intval($inmueble_data['superf_terreno'])),
-                        'featuresUtilitiesRoadAccess' => $inmueble_data['acceso_rodado'] === 'si_tiene' ? true : false,
-                        'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null) + pffi_map_terrain_class($inmueble_data['calif_terreno']);
-                    break;
+                    case 'casa_chalet':
+                        $tipologia_chalet = $inmueble_data['tipologia_chalet'] ?? '';
+                        switch ($tipologia_chalet) {
+                            case 'adosado':
+                                $featuresType = 'house_terraced';
+                                break;
+                            case 'pareado':
+                                $featuresType = 'house_semidetached';
+                                break;
+                            case 'independiente':
+                                $featuresType = 'house_independent';
+                                break;
+                            default:
+                                $featuresType = 'house';
+                                break;
+                        }
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => $featuresType,
+                            'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
+                            'featuresAreaPlot' => intval($inmueble_data['m_construidos']),
+                            'featuresAreaUsable' => intval($inmueble_data['m_parcela']),
+                            'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,
+                            'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
+                            'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
+                            'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
+                            'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
+                            'featuresConservation' => ($inmueble_data['campo_estado_cons'] == 'buen_estado') ? 'good' : (($inmueble_data['campo_estado_cons'] == 'a_reformar') ? 'toRestore' : ''),
+                            'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
+                            'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
+                            'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
+                            'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
+                            'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
+                            'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
+                            'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
+                            'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
+                            'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
+                            'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
+                        );
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
+                        break;
+                    
+                    case 'casa_rustica':
+                        $tipo_rustica = $inmueble_data['tipo_rustica'] ?? '';
+                        switch ($tipo_rustica) {
+                            case 'finca':
+                                $featuresType = 'rustic_terrera';
+                                break;
+                            case 'castillo':
+                                $featuresType = 'rustic_torre';
+                                break;
+                            case 'casa_rural':
+                                $featuresType = 'rustic_rural';
+                                break;
+                            case 'casa_pueblo':
+                                $featuresType = 'rustic_caseron';
+                                break;
+                            case 'cortijo':
+                                $featuresType = 'rustic_cortijo';
+                                break;
+                            default:
+                                $featuresType = 'rustic_house';
+                                break;
+                        }
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => $featuresType,
+                            'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
+                            'featuresAreaPlot' => max(1, intval($inmueble_data['m_construidos'])),
+                            'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela'])),
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
+                            'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
+                            'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
+                            'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
+                            'featuresFloorsBuilding' => intval($inmueble_data['planta']) >= 1 ? intval($inmueble_data['planta']) : null,
+                            'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
+                            'featuresWindowsLocation' => $inmueble_data['int_ext'],
+                            'featuresBalcony' => in_array('balcon', $inmueble_data['otra_caract_inm']),
+                            'featuresConditionedAir' => in_array('aire', $inmueble_data['otra_caract_inm']),
+                            'featuresChimney' => in_array('chimenea', $inmueble_data['otra_caract_inm']),
+                            'featuresGarden' => in_array('jardin', $inmueble_data['otra_caract_inm']),
+                            'featuresParkingAvailable' => in_array('garaje', $inmueble_data['otra_caract_inm']),
+                            'featuresPool' => in_array('piscina', $inmueble_data['otra_caract_inm']),
+                            'featuresStorage' => in_array('trastero', $inmueble_data['otra_caract_inm']),
+                            'featuresTerrace' => in_array('terraza', $inmueble_data['otra_caract_inm']),
+                            'featuresWardrobes' => in_array('armario', $inmueble_data['otra_caract_inm']),
+                            'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
+                            'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
+                            'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
+                        );
+                        break;
+                    
+                    case 'local':
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => 'premises',
+                            'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
+                            'featuresFacadeArea' => max(1, intval($inmueble_data['m_lineales']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_lineales'])),
+                            'featuresRooms' => intval( $inmueble_data['num_estancias'] ),
+                            'featuresFloorsProperty' => intval( $inmueble_data['num_plantas'] ),
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
+                            'featuresEquippedKitchen' => in_array('cocina_equipada', $inmueble_data['caract_local']),
+                            'featuresHeating' => in_array('calefaccion', $inmueble_data['caract_local']),
+                            'featuresSecurityAlarm' => in_array('alarma', $inmueble_data['caract_local']),
+                            'featuresLocatedAtCorner' => in_array('esquina', $inmueble_data['caract_local']),
+                            'featuresSecurityDoor' => in_array('puerta_seguridad', $inmueble_data['caract_local']),
+                            'featuresStorage' => in_array('almacen', $inmueble_data['caract_local']),
+                            'featuresSecuritySystem' => in_array('circuito', $inmueble_data['caract_local']),
+                            'featuresSmokeExtraction' => in_array('humos', $inmueble_data['caract_local']),
+                        );
+                        $ubication_map = array(
+                            'pie_calle' => 'street',
+                            'centro_com' => 'shopping',
+                            'entreplanta' => 'mezzanine',
+                            'subterraneo' => 'belowGround',
+                        );
+                        
+                        $property['propertyFeatures']['featuresUbication'] = $ubication_map[$inmueble_data['ubicacion_local']] ?? 'unknown';
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                        break;
+                    
+                    case 'oficina':
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => 'office',
+                            'featuresFloorsProperty' => intval( $inmueble_data['planta'] ),
+                            'featuresBuiltYear' => intval( $inmueble_data['ano_edificio'] ),
+                            'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
+                            'featuresConservation' => $inmueble_data['campo_estado_cons'] == 'buen_estado' ? 'good' : ($inmueble_data['campo_estado_cons'] == 'a_reformar' ? 'toRestore' : ''),
+                            'featuresWindowsLocation' => isset($inmueble_data['int_ext']) ? $inmueble_data['int_ext'] : '',
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
+                            'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela'])),
+                            'featuresLiftNumber' => intval( $inmueble_data['num_ascensores'] ),
+                            'featuresParkingSpacesNumber' => intval( $inmueble_data['num_plazas'] ),
+                            'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,
+                        );
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
+                        $property['propertyFeatures']['featuresRoomsSplitted'] = pffi_map_room_splitted($inmueble_data['distribucion_oficina']);
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_ac($inmueble_data['aire_acond']));
+                        break;
+                    
+                    case 'garaje':
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => 'garage',
+                            'featuresAreaConstructed' => intval( $inmueble_data['m_plaza'] ),
+                            'featuresGarageCapacityType' => pffi_map_garage_type($inmueble_data['tipo_plaza']),
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null
+                        );
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_garage_features($inmueble_data['caract_garaje']));
+                        break;
+                    
+                    case 'terreno':
+                        $property['propertyFeatures'] = array(
+                            'featuresType' => pffi_map_terray_type($inmueble_data['tipo_terreno']),
+                            'featuresAreaPlot' => max(1, intval($inmueble_data['superf_terreno'])),
+                            'featuresUtilitiesRoadAccess' => $inmueble_data['acceso_rodado'] === 'si_tiene' ? true : false,
+                            'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : null
+                        );
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_terrain_class($inmueble_data['calif_terreno']));
+                        break;
             }
             
             //vaciar campos nulos
@@ -372,7 +379,7 @@ function pffi_properties_feed_generate() {
         // Generar el nombre del archivo con el customerCode
         $file_name = $form_values['code'] . '.json';
         // Convertir todos los datos a UTF-8
-        $property_data = convert_to_utf8_recursively($property_data);
+        $property_data = pffi_convert_to_utf8_recursively($property_data);
         // Convertir el array de propiedades a JSON
         $json_data = wp_json_encode($property_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         if ($json_data === false) {
@@ -505,7 +512,7 @@ add_action( 'admin_post_pffi_properties_feed_generate', 'pffi_properties_feed_ge
  * @param int $post_id El ID del post actual.
  * @return array Un array con todos los campos personalizados y sus valores.
  */
-function obtener_campos_inmueble_feed($post_id) {
+function pffi_obtener_campos_inmueble_feed($post_id) {
     $meta_values = get_post_meta($post_id);
 
     // Verificar si algún valor está serializado y deserializarlo
@@ -522,7 +529,9 @@ function obtener_campos_inmueble_feed($post_id) {
 }
 
 
-// Eliminar campos vacíos de un array
+/**
+ * Eliminar campos vacíos de un array.
+ */
 function pffi_remove_empty_fields( $array ) {
     foreach ( $array as $key => $value ) {
         if ( is_array( $value ) ) {
@@ -535,7 +544,10 @@ function pffi_remove_empty_fields( $array ) {
     return $array;
 }
 
-// Mapear el tipo de calefacción
+
+/**
+ * Mapear el tipo de terreno
+ */
 function pffi_map_terray_type($tipo_terreno) {
     switch ($tipo_terreno) {
         case 'urbanizable':
@@ -549,10 +561,12 @@ function pffi_map_terray_type($tipo_terreno) {
     }
 }
 
-// Mapear el tipo de garaje
+
+/**
+ * Mapear la clase de terreno
+ */
 function pffi_map_terrain_class($calif_terreno) {
     $classification = [
-        'featuresClassificationBlocks' => false,
         'featuresClassificationBlocks' => false,
         'featuresClassificationChalet' => false,
         'featuresClassificationCommercial' => false,
@@ -593,7 +607,10 @@ function pffi_map_terrain_class($calif_terreno) {
     return $classification;
 }
 
-// Mapear el tipo de calefacción
+
+/**
+ * Mapear el tipo de calefacción
+ */
 function pffi_map_ac($airConditioning) {
     $conditionedAirType = '';
     $conditionedAir = false;
@@ -625,7 +642,9 @@ function pffi_map_ac($airConditioning) {
     );
 }
 
-// Mapear la distribución de las habitaciones
+/**
+ * Mapear la distribución de las habitaciones
+ */
 function pffi_map_room_splitted($room_splitted) {
     $value_mapped = 'unknown';
 
@@ -644,8 +663,11 @@ function pffi_map_room_splitted($room_splitted) {
     return $value_mapped;
 }
 
-// Mapear la orientación
-function pffi_map_orientation($pffi_map_orientation_array) {
+
+/**
+ * Mapear la orientación.
+ */
+function pffi_map_orientation($orientaciones) {
     $mapped_orientation = array(
         'featuresOrientationNorth' => false,
         'featuresOrientationSouth' => false,
@@ -653,7 +675,7 @@ function pffi_map_orientation($pffi_map_orientation_array) {
         'featuresOrientationWest' => false,
     );
 
-    foreach ($pffi_map_orientation_array as $orientation) {
+    foreach ($orientaciones as $orientation) {
         switch ($orientation) {
             case 'norte':
                 $mapped_orientation['featuresOrientationNorth'] = true;
@@ -673,7 +695,10 @@ function pffi_map_orientation($pffi_map_orientation_array) {
     return $mapped_orientation;
 }
 
-// Mapear los campos de energía
+
+/**
+ * Mapear los campos de energía.
+ */
 function pffi_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emisiones) {
     $mapped_energy_fields = array(
         'featuresEnergyCertificatePerformance' => max( 0, floatval($consumo) ),
@@ -690,17 +715,18 @@ function pffi_map_energy_fields($calif_consumo, $consumo, $calif_emis, $emisione
     return $mapped_energy_fields;
 }
 
-// Mapear la calificación del certificado energético
-function pffi_map_energy_certificate_rating($rating) {
-    $rating = strtolower($rating);
 
+/**
+ * Mapear la calificación del certificado energético.
+ */
+function pffi_map_energy_certificate_rating($rating) {
     $allowed_values = array("a", "a+", "a1", "a2", "a3", "a4", "b", "b-", "c", "d", "e", "f", "g");
 
-    if (in_array($rating, $allowed_values)) {
+    if (in_array(strtolower($rating), $allowed_values)) {
         return strtoupper($rating);
     }
 
-    switch ($rating) {
+    switch (strtolower($rating)) {
         case 'exento':
             return 'exempt';
         case 'tramite':
@@ -710,18 +736,20 @@ function pffi_map_energy_certificate_rating($rating) {
     }
 }
 
-// Mapear la calificación de emisiones del certificado energético
+
+/**
+ * Mapear la calificación de emisiones del certificado energético.
+ */
 function pffi_map_energy_certificate_emissions_rating($rating) {
     $allowed_values = array("A", "B", "C", "D", "E", "F", "G");
 
-    if (in_array($rating, $allowed_values)) {
-        return $rating;
-    } else {
-        return null;
-    }
+    return in_array($rating, $allowed_values) ? $rating : null;
 }
 
-// Mapear el tipo de garaje
+
+/**
+ * Mapear el tipo de garaje.
+ */
 function pffi_map_garage_type($tipo_plaza) {
     switch ($tipo_plaza) {
         case 'coche_peq':
@@ -739,7 +767,10 @@ function pffi_map_garage_type($tipo_plaza) {
     }
 }
 
-// Mapear las características del garaje
+
+/**
+ * Mapear las características del garaje.
+ */
 function pffi_map_garage_features($caract_garaje) {
     return array(
         'featuresLiftAvailable' => (bool) in_array('ascensor_garaje', $caract_garaje),
@@ -750,32 +781,33 @@ function pffi_map_garage_features($caract_garaje) {
     );
 }
 
-// Mapear el tipo de calefacción
+/**
+ * Mapear el tipo de calefacción
+ */
 function pffi_heating_type($calefaccion) {
     switch ($calefaccion) {
         case 'individual':
             return array('featuresHeatingType' => 'individualGas');
-
         case 'centralizada':
             return array('featuresHeatingType' => 'centralGas');
-
         case 'no_dispone':
             return array('featuresHeatingType' => 'noHeating');
-
         default:
             return array();
     }
 }
 
-// codificar datos
-function convert_to_utf8_recursively($data) {
-    if (is_string($data)) {
-        return mb_convert_encoding($data, 'UTF-8', 'UTF-8');
+/**
+ * Convertir los datos a UTF-8 de forma recursiva.
+ */
+function pffi_convert_to_utf8_recursively( $data ) {
+    if ( is_string( $data ) ) {
+        return mb_convert_encoding( $data, 'UTF-8', 'UTF-8' );
     }
 
-    if (is_array($data)) {
-        foreach ($data as $key => $value) {
-            $data[$key] = convert_to_utf8_recursively($value);
+    if ( is_array( $data ) ) {
+        foreach ( $data as $key => $value ) {
+            $data[ $key ] = pffi_convert_to_utf8_recursively( $value );
         }
     }
 
