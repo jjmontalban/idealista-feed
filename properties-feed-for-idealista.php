@@ -94,29 +94,22 @@ function pffi_render_admin_page() {
     $form_values = wp_parse_args( $form_values, $default_values );
     ?>
 
-    <div class="wrap">
+<div class="wrap">
         <h1><?php esc_html_e( 'Idealista Feed', 'properties-feed-for-idealista' ); ?></h1>
 
         <?php
-        // Verificación del nonce antes de procesar los GET
-        if ( isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'pffi_feed_status_nonce' ) ) {
-
-            if ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'customer_data_saved' ) {
-                $message = __( 'Customer data successfully stored', 'properties-feed-for-idealista' );
-                echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
-            } elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'success' ) {
-                $file_name = 'properties_' . esc_attr( $form_values['code'] ) . '.json';
-                $file_path = plugin_dir_path( __FILE__ ) . $file_name;
-                $message = sprintf( __( 'JSON file generated and sent successfully', 'properties-feed-for-idealista' ), esc_html( $file_path ) );
-                echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
-            } elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'ftp_missing' ) {
-                $message = __( 'The JSON file was generated but not sent due to missing FTP settings.', 'properties-feed-for-idealista' );
-                echo '<div id="message" class="error"><p>' . esc_html( $message ) . '</p></div>';
-            }
-
-        } else {
-            // Mensaje de error si el nonce no es válido
-            echo '<div id="message" class="error"><p>' . esc_html__( 'Security check failed.', 'properties-feed-for-idealista' ) . '</p></div>';
+        // Mostrar los mensajes de estado
+        if ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'customer_data_saved' ) {
+            $message = __( 'Customer data successfully stored', 'properties-feed-for-idealista' );
+            echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
+        } elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'success' ) {
+            $file_name = 'properties_' . esc_attr( $form_values['code'] ) . '.json';
+            $file_path = plugin_dir_path( __FILE__ ) . $file_name;
+            $message = sprintf( __( 'JSON file generated and sent successfully', 'properties-feed-for-idealista' ), esc_html( $file_path ) );
+            echo '<div id="message" class="updated"><p>' . esc_html( $message ) . '</p></div>';
+        } elseif ( isset( $_GET['feed_status'] ) && $_GET['feed_status'] === 'ftp_missing' ) {
+            $message = __( 'The JSON file was generated but not sent due to missing FTP settings.', 'properties-feed-for-idealista' );
+            echo '<div id="message" class="error"><p>' . esc_html( $message ) . '</p></div>';
         }
         ?>
 
@@ -237,12 +230,9 @@ function pffi_store_customer_data() {
     // Almacenar los datos del cliente en la base de datos
     update_option( 'pffi_customer_data', $customer_data );
 
-    // Redirigir de vuelta a la página de configuración con un mensaje de éxito
-    $redirect_url = add_query_arg( array(
-        'feed_status' => 'customer_data_saved',
-        '_wpnonce'    => wp_create_nonce( 'pffi_feed_status_nonce' )
-    ), admin_url( 'admin.php?page=properties-feed-for-idealista' ) );
-    
+    // Redirigir de vuelta a la página de configuración con un mensaje de éxito (sin el nonce en la URL)
+    $redirect_url = add_query_arg( 'feed_status', 'customer_data_saved', admin_url( 'admin.php?page=properties-feed-for-idealista' ) );
+
     wp_safe_redirect( $redirect_url );
     exit;
 }
