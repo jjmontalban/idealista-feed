@@ -179,8 +179,8 @@ function pffi_properties_feed_generate() {
                     $property['propertyFeatures'] = array(
                         'featuresType' => 'flat',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_utiles'])),
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_parcela']) == 0 ? intval($inmueble_data['m_utiles']) : intval($inmueble_data['m_parcela'])),
+                        'featuresAreaPlot' => max(1, intval($inmueble_data['m_parcela'])),
+                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_utlies'])),
                         'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
                         'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
                         'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
@@ -226,8 +226,8 @@ function pffi_properties_feed_generate() {
                         $property['propertyFeatures'] = array(
                             'featuresType' => $featuresType,
                             'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
-                            'featuresAreaPlot' => intval($inmueble_data['m_parcela']),
-                            'featuresAreaUsable' => intval($inmueble_data['m_utiles']),
+                            'featuresAreaPlot' => max(1, intval($inmueble_data['m_parcela'])),
+                            'featuresAreaUsable' => max(1, intval($inmueble_data['m_utiles'])),
                             'featuresFloorsBuilding' => intval($inmueble_data['num_plantas']) >= 1 ? intval($inmueble_data['num_plantas']) : null,
                             'featuresDuplex' => in_array('duplex', $inmueble_data['caract_inm']),
                             'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
@@ -301,6 +301,7 @@ function pffi_properties_feed_generate() {
                         $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
                         $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
                         $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
+
                         break;
                     
                     case 'local':
