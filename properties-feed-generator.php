@@ -298,6 +298,9 @@ function pffi_properties_feed_generate() {
                             'featuresPenthouse' => in_array('atico', $inmueble_data['caract_inm']),
                             'featuresStudio' => in_array('estudio', $inmueble_data['caract_inm']),
                         );
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_heating_type($inmueble_data['calefaccion']));
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_energy_fields($inmueble_data['calif_consumo'], $inmueble_data['consumo'], $inmueble_data['calif_emis'], $inmueble_data['emisiones']));
+                        $property['propertyFeatures'] = array_merge($property['propertyFeatures'], pffi_map_orientation($inmueble_data['orientacion']));
                         break;
                     
                     case 'local':
