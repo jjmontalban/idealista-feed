@@ -180,7 +180,7 @@ function pffi_properties_feed_generate() {
                         'featuresType' => 'flat',
                         'featuresAreaConstructed' => intval( $inmueble_data['m_construidos'] ),
                         'featuresAreaPlot' => max(1, intval($inmueble_data['m_parcela'])),
-                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_utlies'])),
+                        'featuresAreaUsable' => max(1, intval($inmueble_data['m_utiles'])),
                         'featuresBathroomNumber' => isset($inmueble_data['num_banos']) && !is_null($inmueble_data['num_banos']) && $inmueble_data['num_banos'] > 0 ? intval($inmueble_data['num_banos']) : 1,
                         'featuresBedroomNumber' => intval( $inmueble_data['num_dormitorios'] ),
                         'featuresRooms' => intval( $inmueble_data['num_banos'] + $inmueble_data['num_dormitorios'] ),
