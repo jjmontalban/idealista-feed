@@ -14,6 +14,7 @@ jobs:
         uses: 10up/action-wordpress-plugin-deploy@stable
         with:
           plugin_slug: properties-feed-for-idealista
+          build_dir: trunk
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
